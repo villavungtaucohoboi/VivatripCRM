@@ -299,6 +299,20 @@ input.sel{font-weight:500}
 #apop .ai{min-width:0;font-size:13.5px}#apop .ai small{display:block;color:var(--muted);margin-top:2px;font-size:12px}#apop .ai a{color:var(--coral);font-weight:700;text-decoration:none}
 #apop .ab{display:flex;gap:6px;flex-shrink:0}#apop .anote{font-size:12px;color:var(--muted);margin:6px 2px}
 #apop .aperm{width:100%;margin-top:8px;padding:9px;border-radius:11px;border:1px solid #FFC7B5;background:#fff;color:var(--coral);font-weight:700;cursor:pointer}
+.ackc{display:inline-grid;place-items:center;min-width:22px;height:22px;border-radius:6px;font-weight:800;font-size:13px;vertical-align:middle}
+.ackc.ok{background:var(--green);color:#fff}.ackc.na{color:#C9C2BE}
+.ackc.box{border:2px solid #CFC6C1;background:#fff;padding:0 4px;cursor:pointer;font:inherit}.ackc.box.ro{cursor:default}
+.ackc.box:not(.ro):hover{border-color:var(--green);background:#F3FBF6}.ackc.box small{font-size:10.5px;font-weight:700;color:var(--muted);white-space:nowrap}
+.ackc.lv1{border-color:var(--amber);background:#FFF6E8}.ackc.lv1 small{color:var(--amber)}.ackc.lv2{border-color:#E5484D;background:#FFF0F0;animation:pulse 1.6s infinite}.ackc.lv2 small{color:#E5484D}
+.ackc.ing{opacity:.5}@keyframes pulse{50%{box-shadow:0 0 0 4px rgba(229,72,77,.18)}}
+td.ctr{text-align:center}
+#ackboard{margin-bottom:12px;padding:14px 16px}#ackboard .abh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;font-size:13px}#ackboard .abh b{font-size:14.5px}#ackboard .abh i{font-style:normal;font-weight:700}
+#ackboard .warnc{color:var(--amber)}
+#ackboard .abg{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px;margin-top:10px}
+#ackboard .abs{text-align:left;border:1px solid var(--line);background:#fff;border-radius:12px;padding:9px 11px;cursor:pointer;font:inherit;display:flex;flex-direction:column;gap:5px}
+#ackboard .abs.late{border-color:#F7C9CB;background:#FFF5F5}#ackboard .abs.wait{border-color:#FFD49A;background:#FFFAF2}#ackboard .abs.done{background:#F7FCF9}
+#ackboard .abs b{font-size:13px}#ackboard .abs small{font-size:11.5px;color:var(--muted)}#ackboard .abs em{font-style:normal;color:#E5484D;font-weight:700}
+#ackboard .abar{height:5px;border-radius:5px;background:#EFE7E3;overflow:hidden}#ackboard .abar i{display:block;height:100%;background:var(--green);border-radius:5px}
 .teampick{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.teampick .ck{display:inline-flex;align-items:center;gap:5px;padding:6px 11px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:12.5px;font-weight:600;cursor:pointer;margin:0}
 .teampick .ck{padding:6px 12px!important;min-height:30px;line-height:1.3;box-sizing:border-box}.teampick .ck .bx{display:none}.teampick .ck.on{background:var(--peach);border-color:#FFB59E;color:var(--coral)}.teampick .ck.on:before{content:'✓'}
 .tmode{display:flex!important;flex-wrap:wrap;width:auto!important;max-width:100%}
@@ -981,12 +995,13 @@ const careH=l=>`<span class="care">${l.care.map(c=>`<i class="${c?'on':''}"></i>
 const kids=l=>l.kids?` + ${fmt(l.kids)} bé`:'';
 function renderLeads(){
   const q=$('#lq').value.toLowerCase(),s=$('#lsrc').value,a=$('#larea').value,sa=$('#lsale').value;
-  const base=leads.filter(l=>inPer(l)&&(!s||l.src===s)&&(!a||l.area===a)&&(!sa||l.sale===sa)&&(!q||(l.name+' '+l.phone+' '+l.code+' '+l.req).toLowerCase().includes(q))).sort((x,y)=>(dateOf(y)||0)-(dateOf(x)||0));
-  chips($('#lchips'),[['','Tất cả',base.length],...ST.map(x=>[x,x,base.filter(l=>l.st===x).length])],lst,v=>lst=v);
-  table($('#ltable'),lst?base.filter(l=>l.st===lst):base,[
+  const base=leads.filter(l=>inPer(l)&&(!s||l.src===s)&&(!a||l.area===a)&&(!sa||l.sale===sa)&&(!q||(l.name+' '+l.phone+' '+l.code+' '+l.req).toLowerCase().includes(q))).sort((x,y)=>(day0(dateOf(y)||new Date(0))-day0(dateOf(x)||new Date(0)))||((RAW.lead?.get(y.rid)?.ct||+dateOf(y)||0)-(RAW.lead?.get(x.rid)?.ct||+dateOf(x)||0)));
+  const NA=typeof ackOn==='function'&&ackOn(),lf=x=>x==='__noack'?(l=>!ackOf(l)&&!!saleIdOf(l)&&l.st!=='Khách Thất bại'):(l=>l.st===x);
+  chips($('#lchips'),[['','Tất cả',base.length],...ST.map(x=>[x,x,base.filter(l=>l.st===x).length]),...(NA?[['__noack','⏳ Sale chưa nhận',base.filter(lf('__noack')).length]]:[])],lst,v=>lst=v);
+  table($('#ltable'),lst?base.filter(lf(lst)):base,[
     ['Khách hàng',l=>`<div class="nm"><b>${esc(l.name)}</b><small>${esc(l.phone)}</small></div>`],['Liên hệ',l=>dfmt(l.d)],['Khu vực',l=>`<span class="area">${esc(l.area)}</span>`],['Nguồn KH',l=>srcH(l.src)],
-    ['Khách',l=>fmt(l.adults)+kids(l)],['Check-in',l=>`${dfmt(l.ci)} → ${dfmt(l.co)}`],['Yêu cầu cụ thể',l=>esc(l.req),'ell'],['Tình trạng',l=>`<span class="tag ${STC[l.st]}">${l.st}</span>`],['Sale chính',l=>esc(l.sale)],['Chăm sóc',careH]],
-    l=>`<div class="r1"><b>${esc(l.name)}</b><span class="tag ${STC[l.st]}">${l.st}</span></div><div class="r2">${esc(l.req)} · ${fmt(l.adults)}${l.kids?`+${l.kids}`:''} khách · ${dfmt(l.ci)}</div><div class="r3"><span class="area">${esc(l.area)}</span>${srcH(l.src)}${careH(l)}<span class="sp" style="color:var(--muted)">${esc(l.sale)}</span></div>`,openLead);}
+    ['Khách',l=>fmt(l.adults)+kids(l)],['Check-in',l=>`${dfmt(l.ci)} → ${dfmt(l.co)}`],['Yêu cầu cụ thể',l=>esc(l.req),'ell'],['Tình trạng',l=>`<span class="tag ${STC[l.st]}">${l.st}</span>`],['Sale chính',l=>esc(l.sale)],...(NA?[['Đã nhận',l=>ackCell(l),'ctr']]:[]),['Chăm sóc',careH]],
+    l=>`<div class="r1"><b>${esc(l.name)}</b><span class="tag ${STC[l.st]}">${l.st}</span></div><div class="r2">${esc(l.req)} · ${fmt(l.adults)}${l.kids?`+${l.kids}`:''} khách · ${dfmt(l.ci)}</div><div class="r3"><span class="area">${esc(l.area)}</span>${srcH(l.src)}${careH(l)}<span class="sp" style="color:var(--muted)">${esc(l.sale)}</span>${NA?ackCell(l):''}</div>`,openLead);}
 function openLead(id){const l=leads[id],cur={care:[...l.care],can:l.checkCan},opt=(a,v)=>a.map(x=>`<option ${x===v?'selected':''}>${x}</option>`).join('');
   drawer(l.name,`${esc(l.code||'Chưa có mã đơn')} · ${esc(l.phone||'—')} · liên hệ ${l.hour} ${dfull(l.d)}`,
    `<div class="sec">Thông tin khách</div>${fld('Khu vực',`<span class="area">${esc(l.area)}</span>`)}${fld('Nguồn KH',srcH(l.src))}${fld('Nguồn kênh',esc(l.kenh))}${fld('Loại khách',esc(l.lkh||'—'))}${fld('Số khách',`${fmt(l.adults)} người lớn${l.kids?` · ${l.kids} trẻ em`:''}`)}${fld('Check-in / out',`${dfull(l.ci)} → ${dfull(l.co)}`)}${fld('Yêu cầu cụ thể',esc(l.req))}
@@ -1644,7 +1659,13 @@ const myTeam=()=>window.ME&&Array.isArray(ME.team)&&ME.team.length?new Set([...M
 const ACK_F='SALE XÁC NHẬN LEAD',ACK_STEP=5*60e3,ACK_WIN=24*3600e3;
 const ackOn=()=>!!fmeta('lead',ACK_F);
 const ackOf=l=>chk(rawVal('lead',l.rid,ACK_F));
-const bornOf=l=>{const r=RAW.lead?.get(l.rid);return r?.ct?new Date(r.ct):l.d};
+const SEEN=(()=>{try{return JSON.parse(localStorage.getItem('vivatrip-seen')||'{}')}catch(e){return {}}})();let SEEN_INIT=!Object.keys(SEEN).length;
+const bornOf=l=>{const r=RAW.lead?.get(l.rid);if(r?.ct)return new Date(r.ct);const s=SEEN[l.rid];return s>0?new Date(s):null};
+function markSeen(){if(!leads)return;const now=Date.now(),t0=now-ACK_WIN;let ch=false;
+  for(const l of leads){if(SEEN[l.rid]!=null)continue;const r=RAW.lead?.get(l.rid);if(r?.ct)continue;
+    // lần đầu mở app trên máy này: khách đã có sẵn không tính giờ (tránh báo nhầm); khách xuất hiện sau đó tính từ lúc thấy
+    SEEN[l.rid]=SEEN_INIT||(l.d&&l.d<t0-864e5)?0:now;ch=true}
+  SEEN_INIT=false;if(ch){for(const k in SEEN)if(SEEN[k]&&SEEN[k]<t0-864e5)delete SEEN[k];try{localStorage.setItem('vivatrip-seen',JSON.stringify(SEEN))}catch(e){}}}
 const myLark=()=>window.ME?.larkId||window.__ASLARK__||'';
 const isMine=l=>!!myLark()&&saleIdOf(l)===myLark();
 const watcher=()=>window.__ASLARK__?false:!window.ME||ME.role==='admin'||(((P_().read||{}).lead==='all'||myTeam())&&canAssign());
@@ -1664,11 +1685,11 @@ async function ackLead(rid){const m=fmeta('lead',ACK_F);if(!m)return;ACKED[rid]=
   try{await larkWrite('lead',rid,{[m.id]:true});await refreshIds('lead',[rid]);toast('✓ Đã nhận khách — đã báo Tổng đài & Quản lý')}catch(e){delete ACKED[rid];drawAlerts();toast('Không lưu được: '+(e?.message||e))}}
 function ackUI(l){if(!ackOn())return;const a=ackOf(l)||ACKED[l.rid],b=bornOf(l);
   const box=document.createElement('div');box.className='ackbox '+(a?'ok':'');
-  box.innerHTML=a?'✓ Sale đã xác nhận nhận khách':`<span>⏳ Sale chưa xác nhận nhận khách${b?' · '+agoT(Date.now()-b):''}</span>${isMine(l)||(!window.ME&&!window.__ASLARK__)?'<button class="abtn p" data-ack>✓ Đã nhận khách</button>':''}`;
+  box.innerHTML=a?'✓ Sale đã xác nhận nhận khách':`<span>⏳ Sale chưa xác nhận nhận khách${b?' · '+agoT(Date.now()-b):''}</span>${canAck(l)?'<button class="abtn p" data-ack>✓ Đã nhận khách</button>':''}`;
   $('#dbody').prepend(box);box.querySelector('[data-ack]')?.addEventListener('click',async()=>{await ackLead(l.rid);const n=leads.find(x=>x.rid===l.rid);if(n)openLead(n.id)})}
 
 function checkAlerts(){
-  if(!LOADED_AT||!leads)return;const P=pendingLeads(),now=Date.now();let ring=false,newMine=[];
+  if(!LOADED_AT||!leads)return;markSeen();const P=pendingLeads(),now=Date.now();let ring=false,newMine=[];
   const mine=P.filter(isMine),late=watcher()?P.filter(l=>now-bornOf(l)>=ACK_STEP):[];
   for(const l of mine){const s=ASTATE[l.rid];if(!s){ASTATE[l.rid]={st:0,at:now};if(!AFIRST||now-bornOf(l)<10*60e3){ring=true;newMine.push(l)}}}
   for(const l of [...mine,...late]){const st=Math.floor((now-bornOf(l))/ACK_STEP),s=ASTATE[l.rid]||(ASTATE[l.rid]={st:0,at:now});if(st>s.st){s.st=st;s.at=now;if(st>=1)ring=true}}
@@ -1702,6 +1723,30 @@ function askPerm(force){try{if('Notification' in window&&Notification.permission
 setInterval(()=>{try{checkAlerts()}catch(e){}},30e3);
 // sale đang mở app: hỏi máy chủ nhanh hơn để khách mới hiện sớm
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)setTimeout(()=>{try{checkAlerts()}catch(e){}},1500)});
+
+/* ---- cột "Đã nhận" trên danh sách lead (ô vuông như Lark) + bảng theo dõi nhận khách cho Quản lý / Tổng đài ---- */
+const canAck=l=>isMine(l)||(window.ME?ME.role==='admin':!window.__ASLARK__);
+function ackCell(l){if(!saleIdOf(l))return '<span class="ackc na" title="Chưa phân sale">–</span>';
+  if(ackOf(l)||ACKED[l.rid])return '<span class="ackc ok" title="Sale đã nhận khách">✓</span>';
+  const b=bornOf(l),age=b?Date.now()-b:0,live=b&&age<ACK_WIN,lv=live?Math.floor(age/ACK_STEP):0;
+  const tip=live?`Chưa nhận · chờ ${agoT(age)}`:'Chưa tích nhận';
+  return canAck(l)?`<button class="ackc box ${lv>=2?'lv2':lv>=1?'lv1':''}" data-ackrow="${l.rid}" title="Bấm để xác nhận đã nhận khách · ${tip}">${live?`<small>${agoT(age)}</small>`:''}</button>`
+    :`<span class="ackc box ro ${lv>=2?'lv2':lv>=1?'lv1':''}" title="${tip}">${live?`<small>${agoT(age)}</small>`:''}</span>`}
+function ackBoard(){
+  let el=$('#ackboard');if(!ackOn()||!watcher()){el?.remove();return}
+  if(!el){el=document.createElement('div');el.id='ackboard';el.className='card';$('#lchips').before(el)}
+  const t=range('today'),now=Date.now(),L=leads.filter(l=>saleIdOf(l)&&(()=>{const b=bornOf(l)||l.d;return b&&within(b,t)})());
+  const by={};for(const l of L){const k=l.sale||'—',o=by[k]||(by[k]={n:0,ok:0,wait:0,late:0,oldest:0});o.n++;
+    if(ackOf(l)||ACKED[l.rid])o.ok++;else{const b=bornOf(l),age=b?now-b:0;if(age>=ACK_STEP)o.late++;else o.wait++;o.oldest=Math.max(o.oldest,age)}}
+  const rows=Object.entries(by).sort((a,b)=>(b[1].late-a[1].late)||(b[1].wait-a[1].wait)||(b[1].n-a[1].n));
+  const tot=rows.reduce((s,[,o])=>({n:s.n+o.n,ok:s.ok+o.ok,p:s.p+o.wait+o.late,late:s.late+o.late}),{n:0,ok:0,p:0,late:0});
+  el.innerHTML=`<div class="abh"><b>Nhận khách hôm nay</b><span>${fmt(tot.n)} khách · <i class="pos">${fmt(tot.ok)} đã nhận</i> · <i class="${tot.p?'warnc':''}">${fmt(tot.p)} chưa nhận</i>${tot.late?` · <i class="neg">${fmt(tot.late)} trễ &gt;5 phút</i>`:''}</span></div>
+   ${rows.length?`<div class="abg">${rows.map(([s,o])=>`<button class="abs ${o.late?'late':o.wait?'wait':'done'}" data-sale="${esc(s)}"><b>${esc(s)}</b>
+     <span class="abar"><i style="width:${o.n?o.ok/o.n*100:0}%"></i></span><small>${o.ok}/${o.n} đã nhận${o.late?` · <em>${o.late} trễ · ${agoT(o.oldest)}</em>`:o.wait?` · ${o.wait} đang chờ`:' ✓'}</small></button>`).join('')}</div>`:'<div class="note" style="margin:6px 0 0">Hôm nay chưa có khách nào được chia.</div>'}`;
+  el.querySelectorAll('[data-sale]').forEach(b=>b.onclick=()=>{const s=$('#lsale');if(s){s.value=[...s.options].some(o=>o.value===b.dataset.sale)?b.dataset.sale:'';}lst='__noack';render()})}
+{const rl0=renderLeads;renderLeads=function(){rl0();try{ackBoard()}catch(e){console.error(e)}
+  $$('#ltable [data-ackrow]').forEach(b=>b.onclick=async e=>{e.stopPropagation();b.disabled=true;b.classList.add('ing');await ackLead(b.dataset.ackrow);render()})}}
+{const da0=drawAlerts;drawAlerts=function(o){da0(o);if(page==='leads'&&!$('#drawer').classList.contains('on')){try{ackBoard()}catch(e){}}}}
 
 </script>
 </body>
