@@ -247,11 +247,66 @@ textarea{width:100%;border:1px solid var(--line);border-radius:11px;padding:10px
 .lbox b{display:block;font-size:18px;margin-bottom:6px}.lbox #lmsg{font-size:13px;color:var(--muted);line-height:1.5}
 .lprog{height:8px;border-radius:9px;background:#F6F1EE;overflow:hidden;margin-top:14px}.lprog div{height:100%;width:4%;background:var(--grad);transition:width .3s}
 input.sel{font-weight:500}
+.acts{display:flex;gap:6px;flex-wrap:wrap;margin:-4px 0 12px}
+.abtn{font-size:12.5px;font-weight:700;padding:8px 12px;border-radius:10px;background:var(--peach2);color:var(--coral);border:1px solid #FFD9CC}
+.abtn.p{background:var(--grad);color:#fff;border:0;box-shadow:0 3px 10px rgba(255,90,95,.25)}
+.addbtn{font-size:13px;font-weight:800;padding:10px 14px;border-radius:11px;background:var(--grad);color:#fff;white-space:nowrap;box-shadow:0 4px 12px rgba(255,90,95,.25)}
+#lform .fld{grid-template-columns:150px 1fr}#lform .fld>div{min-width:0}#lform .fi{width:100%}#lform textarea{min-height:56px}
+#lform .fld span{white-space:normal}.btn:disabled{opacity:.6}
+.livedot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);margin-right:6px;vertical-align:1px;animation:pulse 1.6s infinite}
+/* số chính xác: tự co chữ theo bề rộng thẻ */
+.kpi,.grid>.card{container-type:inline-size}
+.big{font-size:min(24px,11.5cqi);letter-spacing:-.6px}
+.hbar em{min-width:auto;font-size:12.5px}.hbar .nm{flex-shrink:0;width:auto;min-width:96px;max-width:45%}.hbar .tr{min-width:24px}
+@container (max-width:300px){.hbar{flex-wrap:wrap;row-gap:4px}.hbar .nm{max-width:none;flex:1}.hbar .tr{order:3;flex:1 1 100%}}
+.k5{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}.k4{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.lb .pc{font-size:13px}
+.donut-wrap{flex-wrap:wrap;justify-content:center}.legend{min-width:150px}
+.fin div b{font-size:14px;word-break:break-word}
 .flt{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;align-items:center;justify-content:flex-end}
 .flt .sel{padding:8px 9px;font-size:12.5px;max-width:230px}.frange{display:flex;align-items:center;gap:4px}.frange b{color:var(--muted)}
 .fsum{padding:7px 24px;font-size:12px;color:var(--muted);border-bottom:1px solid var(--line);background:#fff}
 .fsum b{color:var(--ink)}.fsum a{color:var(--coral);font-weight:700;cursor:pointer;margin-left:4px}
 @container app (max-width:760px){.flt{width:100%;order:3;margin:0;justify-content:stretch}.flt .sel{flex:1 1 45%;max-width:none;min-width:0}.frange{flex:1 1 100%}.frange .sel{flex:1}.fsum{padding:7px 16px}}
+[hidden]{display:none!important}
+.ftog{display:none}
+.installbtn{display:block;margin-top:10px;width:100%;padding:11px;border-radius:12px;font-weight:800;font-size:13px;background:var(--ink);color:#fff}
+.steps div{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.steps b:first-child{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--grad);color:#fff;display:grid;place-items:center;font-size:13px}
+.kbd{display:inline-block;padding:1px 7px;border:1px solid var(--line);border-radius:6px;background:#fff}
+/* ===== ĐIỆN THOẠI ===== */
+@container app (max-width:760px){
+  .topbar{padding:calc(10px + env(safe-area-inset-top)) 14px 10px;gap:8px;flex-wrap:wrap}
+  .topbar .mlogo{display:none!important}
+  .topbar .tt{display:block!important;flex:1;min-width:0;order:1}
+  .topbar .tt h2{font-size:19px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .topbar .tt .sub{font-size:10.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .topbar .refresh{order:2;padding:8px 11px}
+  .flt{order:3;display:grid;grid-template-columns:1fr auto;gap:6px;width:100%}
+  .flt>*{grid-column:1/-1}.flt #fper{grid-column:1}
+  .ftog{display:flex;grid-column:2;align-items:center;gap:5px;font-size:13px;font-weight:700;padding:0 14px;border-radius:11px;background:#fff;border:1px solid var(--line);white-space:nowrap}
+  .ftog.act{border-color:#FFB8A3;color:var(--coral);background:var(--peach2)}
+  .flt:not(.open)>#ffield,.flt:not(.open)>#fview{display:none!important}
+  .flt .sel{max-width:none;width:100%;font-size:16px;padding:9px 10px}
+  .frange{display:grid;grid-template-columns:1fr auto 1fr}
+  .fsum{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:11.5px}
+  .scroll{padding:14px 14px calc(150px + env(safe-area-inset-bottom))}
+  .hero{margin-bottom:12px}.hero h1{font-size:26px}
+  .toolbar{gap:6px}.toolbar .search{flex:1 1 100%}.toolbar .search input{font-size:16px}
+  .toolbar .sel{flex:1 1 0;min-width:0;font-size:13.5px;padding:9px 6px}
+  .addbtn{position:absolute;right:16px;bottom:calc(80px + env(safe-area-inset-bottom));z-index:35;border-radius:99px;padding:15px 20px;font-size:14.5px;box-shadow:0 10px 28px rgba(255,90,95,.45)}
+  .card{border-radius:14px}
+  .lcard{padding:13px 14px;border-radius:14px}.lcard .r1 b{font-size:15px}
+  .chips{margin:0 -14px 12px;padding:0 14px}
+  .drawer{height:92%}.dh{padding:14px 18px}.db{padding:14px 18px}
+  .df{padding:12px 18px calc(12px + env(safe-area-inset-bottom))}
+  #lform .fld{grid-template-columns:1fr;gap:5px;padding:10px 0}#lform .fld span{font-size:12px}
+  #lform .fi,#lform textarea{font-size:16px}
+  .acts{position:sticky;top:-14px;z-index:2;background:#fff;margin:-14px -18px 10px;padding:12px 18px 10px;border-bottom:1px solid var(--line)}
+  .abtn{flex:1 1 auto;padding:10px 12px;font-size:13px}
+  .msheet{padding-bottom:calc(24px + env(safe-area-inset-bottom))}
+  .toast{bottom:calc(150px + env(safe-area-inset-bottom))}
+}
 </style>
 </head>
 <body>
@@ -271,6 +326,7 @@ input.sel{font-weight:500}
       <div class="tt"><h2 id="ptitle">Tổng quan</h2><div class="sub" id="upd">Đang tải dữ liệu…</div></div>
       <div class="flt" id="flt">
         <select class="sel" id="fper" title="Khoảng thời gian"></select>
+        <button class="ftog" id="ftog" type="button">⚙ Lọc</button>
         <input type="month" class="sel" id="fmonth" hidden>
         <span class="frange" id="frange" hidden><input type="date" class="sel" id="ffrom" title="Từ ngày"><b>→</b><input type="date" class="sel" id="fto" title="Đến ngày"></span>
         <select class="sel" id="ffield" title="Lọc theo cột ngày"></select>
@@ -414,8 +470,8 @@ let LOADED_AT=null;
 const norm=s=>String(s||'').replace(/\s+/g,' ').trim().toLowerCase();
 const txt=v=>{if(v==null)return'';if(typeof v==='string')return v.trim();if(typeof v==='number')return String(v);if(typeof v==='boolean')return v?'✓':'';
   if(Array.isArray(v))return [...new Set(v.map(txt).filter(Boolean))].join(', ');
-  if(typeof v==='object'){if(v.enName||v.name)return person(v);if(v.text!=null)return String(v.text).trim();if('value' in v)return txt(v.value);if(v.fullAddress)return v.fullAddress}return''};
-const person=u=>String(u.enName||u.name||'').replace(/\s*(vivatrip|viva trip|viva)\s*$/i,'').trim()||String(u.name||'');
+  if(typeof v==='object'){if(v.enName||v.en_name||v.name)return person(v);if(v.text!=null)return String(v.text).trim();if('value' in v)return txt(v.value);if(v.fullAddress)return v.fullAddress}return''};
+const person=u=>String(u.enName||u.en_name||u.name||'').replace(/\s*(vivatrip|viva trip|viva)\s*$/i,'').trim()||String(u.name||'');
 const first=v=>Array.isArray(v)?txt(v[0]):txt(v);
 const has=v=>!(v==null||(Array.isArray(v)&&!v.length)||v==='');
 const num=v=>{if(v==null)return 0;if(typeof v==='number')return isFinite(v)?v:0;if(typeof v==='boolean')return v?1:0;
@@ -423,11 +479,11 @@ const num=v=>{if(v==null)return 0;if(typeof v==='number')return isFinite(v)?v:0;
   if(typeof v==='object'){if('value' in v)return num(v.value);if('text' in v)return num(v.text);return 0}
   const s=String(v).replace(/[^\d.,-]/g,'');if(!s)return 0;
   const n=/[.,]\d{3}(\D|$)/.test(s)?parseFloat(s.replace(/[.,]/g,'')):parseFloat(s.replace(',','.'));return isNaN(n)?0:n};
-const dt=v=>{if(Array.isArray(v))v=v[0];if(v&&typeof v==='object')v=v.value??v.text;
+const dt=v=>{if(Array.isArray(v))v=v[0];if(v&&typeof v==='object')v=v.value??v.text;if(Array.isArray(v))v=v[0];if(v&&typeof v==='object')v=v.value??v.text;
   if(typeof v==='number'&&v>1e9)return new Date(v<1e11?v*1000:v);
   if(typeof v==='string'&&v){const m=v.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})/);const d=m?new Date(+m[3],+m[2]-1,+m[1]):new Date(v);if(!isNaN(d))return d}return null};
 const chk=v=>v===true||(Array.isArray(v)&&v.some(x=>x===true||x?.value===true));
-const links=v=>{if(!v)return[];if(Array.isArray(v))return v.flatMap(links);if(v.recordIds)return v.recordIds;if(v.record_ids)return v.record_ids;return[]};
+const links=v=>{if(!v)return[];if(Array.isArray(v))return v.flatMap(links);if(v.recordIds)return v.recordIds;if(v.record_ids)return v.record_ids;if(v.link_record_ids)return v.link_record_ids;if(typeof v==='object'&&'value' in v)return links(v.value);return[]};
 
 /* --- tải bảng --- */
 async function openTable(key){
@@ -435,10 +491,17 @@ async function openTable(key){
   if(!t){const list=await bitable.base.getTableMetaList();const m=list.find(x=>norm(x.name)===norm(TNAME[key]));if(!m)throw new Error('Không tìm thấy bảng "'+TNAME[key]+'"');t=await bitable.base.getTableById(m.id)}
   const metas=await t.getFieldMetaList(),byName={};metas.forEach(m=>byName[norm(m.name)]=m);
   META[key]={t,byName};return t}
+const PAGE=window.__PAGE__||200;
 async function loadTable(key,prog){
-  const t=await openTable(key),recs=[];let pageToken,more=true,guard=0;
-  while(more&&guard++<500){const r=await t.getRecordsByPage({pageSize:200,pageToken});recs.push(...r.records);more=r.hasMore;pageToken=r.pageToken;prog(key,recs.length,r.total||recs.length)}
+  const t=META[key]?.t||await openTable(key),recs=[];let pageToken,more=true,guard=0;
+  while(more&&guard++<2000){const r=await t.getRecordsByPage({pageSize:PAGE,pageToken});recs.push(...r.records);more=r.hasMore&&r.records.length>0;pageToken=r.pageToken;prog(key,recs.length,r.total||recs.length)}
   return recs}
+
+/* --- bộ nhớ đệm trên máy (IndexedDB): mở lên là có số ngay, tải bản mới ở nền --- */
+const CACHE_KEY='vivatrip-crm-v1';
+const idb=()=>new Promise((ok,no)=>{try{const r=indexedDB.open('vivatrip-crm',1);r.onupgradeneeded=()=>r.result.createObjectStore('kv');r.onsuccess=()=>ok(r.result);r.onerror=()=>no(r.error)}catch(e){no(e)}});
+async function cacheGet(){try{const db=await idb();return await new Promise(ok=>{const q=db.transaction('kv').objectStore('kv').get(CACHE_KEY);q.onsuccess=()=>ok(q.result||null);q.onerror=()=>ok(null)})}catch(e){return null}}
+async function cachePut(v){try{const db=await idb();await new Promise(ok=>{const tx=db.transaction('kv','readwrite');tx.objectStore('kv').put(v,CACHE_KEY);tx.oncomplete=ok;tx.onerror=ok;tx.onabort=ok})}catch(e){}}
 const fmeta=(key,...names)=>{for(const n of names){const m=META[key].byName[norm(n)];if(m)return m}return null};
 const getter=(key,rec)=>(...names)=>{const m=fmeta(key,...names);return m?rec.fields[m.id]:undefined};
 
@@ -590,25 +653,109 @@ async function saveTo(key,rid,changes,okMsg){
   try{await writeBack(key,rid,changes);toast('✓ '+okMsg+' · đã lưu vào Lark')}
   catch(e){console.error(e);toast('Không lưu được vào Lark: '+(e?.message||'bạn chưa có quyền sửa bảng này'))}}
 
-/* --- khởi động --- */
+/* --- khởi động + ĐỒNG BỘ TỰ ĐỘNG ---
+   Plugin trong Lark: nghe sự kiện thêm/sửa/xoá bản ghi của Lark → cập nhật ngay (vài giây).
+   Bản web: mỗi ~45 giây hỏi Lark các dòng vừa sửa (theo cột "Sửa lần cuối"), chỉ tải phần thay đổi.
+   Định kỳ tải lại toàn bộ để bắt cả công thức/lookup và dòng bị xoá. */
+const KEYS=['lead','order','pay','cust','cost'];
+const RAW={};let BOOTING=false,SYNCING=false,DIRTY_UI=false;
+const SYNC={poll:45e3,full:20*60e3,lastFull:0,lastPoll:0,changes:0};
+const IS_WEB=()=>window.__BASE__==='web';
+function stamp(extra=''){if(!LOADED_AT)return;const t=LOADED_AT.toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  $('#upd').innerHTML=`<span class="livedot"></span>Trực tiếp · cập nhật ${t}${extra}`}
+const mfField=k=>{const ms=Object.values(META[k].byName),n=ms.find(m=>norm(m.name)==='sửa lần cuối'&&m.type===1002);return n||ms.find(m=>m.type===1002)||null};
+const mfVal=(k,rec)=>{const m=mfField(k);return m?num(rec.fields[m.id]):0};
+const watermark=k=>{let w=0;for(const r of RAW[k].values()){const v=mfVal(k,r);if(v>w)w=v}return w};
+function rebuild(reason){
+  build(Object.fromEntries(KEYS.map(k=>[k,[...RAW[k].values()]])));LOADED_AT=new Date();
+  cachePut({R:Object.fromEntries(KEYS.map(k=>[k,[...RAW[k].values()]])),M:Object.fromEntries(KEYS.map(k=>[k,Object.values(META[k].byName).map(m=>({id:m.id,name:m.name,type:m.type,property:{options:m.property?.options}}))])),at:+LOADED_AT,base:window.__BASE__||'plugin'});
+  initFilters();stamp(reason?` · ${reason}`:'');
+  if($('#drawer').classList.contains('on'))DIRTY_UI=true;else render()}
+// đóng ngăn chi tiết thì vẽ lại phần đang chờ
+function hookClose(){if(hookClose.done)return;hookClose.done=1;const c0=closeAll;closeAll=function(){c0();if(DIRTY_UI){DIRTY_UI=false;render()}}}
+// Bản web đọc lần lượt từng bảng (Lark giới hạn số yêu cầu đồng thời với mã uỷ quyền); plugin đọc song song
+async function fullLoad(keys,prog){prog=prog||(()=>{});const res=[];
+  if(IS_WEB()){for(const k of keys)res.push(await loadTable(k,prog))}else res.push(...await Promise.all(keys.map(k=>loadTable(k,prog))));
+  keys.forEach((k,i)=>RAW[k]=new Map(res[i].map(r=>[r.recordId,r])));SYNC.lastFull=Date.now()}
+// tải lại các đơn hàng liên kết (để "Tổng tiền đã thanh toán", "Tổng chi" — lookup của Lark — luôn mới)
+function linkedOrders(recs){const ids=new Set();recs.forEach(r=>{const m=fmeta(r.__k,'Đơn hàng');if(m)links(r.fields[m.id]).forEach(x=>ids.add(x))});return [...ids]}
+async function fetchIds(k,ids){if(!ids.length)return[];const t=META[k].t,out=[];
+  for(let i=0;i<ids.length;i+=100){const part=ids.slice(i,i+100),v=await t.getRecordsByIds(part,true);v.forEach((x,j)=>{if(x&&x.fields)out.push({recordId:x.recordId||part[j],fields:x.fields})})}return out}
+async function applyChanges(ch){ // ch: {k:{up:Set,del:Set}}
+  let n=0;const touched=[];
+  for(const k of KEYS){const c=ch[k];if(!c)continue;
+    for(const id of c.del){const old=RAW[k].get(id);if(old){touched.push({...old,__k:k});RAW[k].delete(id);n++}}
+    const recs=await fetchIds(k,[...c.up]);recs.forEach(r=>{RAW[k].set(r.recordId,r);touched.push({...r,__k:k});n++})}
+  const oids=linkedOrders(touched.filter(r=>r.__k==='pay'||r.__k==='cost'));
+  if(oids.length)(await fetchIds('order',oids)).forEach(r=>RAW.order.set(r.recordId,r));
+  if(n){SYNC.changes+=n;rebuild(`${fmt(n)} thay đổi mới`)}return n}
+
+/* plugin: sự kiện thời gian thực của Lark */
+function listenLark(){
+  if(IS_WEB())return;const Q={};let tm=null;
+  const push=(k,id,kind)=>{(Q[k]=Q[k]||{up:new Set,del:new Set})[kind].add(id);if(kind==='del')Q[k].up.delete(id);clearTimeout(tm);tm=setTimeout(flush,700)};
+  const flush=async()=>{const ch={...Q};for(const k in Q)delete Q[k];try{await applyChanges(ch)}catch(e){console.error(e)}};
+  for(const k of KEYS){const t=META[k].t;if(!t.onRecordAdd)continue;
+    t.onRecordAdd(ev=>[].concat(ev.data).forEach(id=>push(k,id,'up')));
+    t.onRecordModify(ev=>push(k,ev.data.recordId,'up'));
+    t.onRecordDelete(ev=>[].concat(ev.data).forEach(id=>push(k,id,'del')))}}
+
+/* web: hỏi Lark những dòng vừa sửa */
+async function pollChanges(){
+  if(SYNCING||!LOADED_AT)return;SYNCING=true;
+  try{const ch={},need=[];
+    for(const k of KEYS){const m=mfField(k);if(!m){continue}
+      const wm=watermark(k)-15e3,c={up:new Set,del:new Set};let pageToken,stop=false,guard=0,total=null;
+      while(!stop&&guard++<6){const r=await META[k].t.getRecordsByPage({pageSize:100,pageToken,sort:[{fieldId:m.id,desc:true}]});if(total==null)total=r.total;
+        for(const rec of r.records){if(num(rec.fields[m.id])<wm){stop=true;break}const old=RAW[k].get(rec.recordId);
+          if(!old||JSON.stringify(old.fields)!==JSON.stringify(rec.fields)){RAW[k].set(rec.recordId,rec);c.up.add(rec.recordId)}}
+        if(!r.hasMore)break;pageToken=r.pageToken}
+      if(c.up.size)ch[k]=c;if(total!=null&&total!==RAW[k].size)need.push(k)}
+    let n=0;
+    // các dòng đã nằm sẵn trong RAW → chỉ cần lấy lại đơn liên kết
+    const touched=[];for(const k in ch)for(const id of ch[k].up)touched.push({...RAW[k].get(id),__k:k});n=touched.length;
+    const oids=linkedOrders(touched.filter(r=>r.__k==='pay'||r.__k==='cost'));if(oids.length)(await fetchIds('order',oids)).forEach(r=>RAW.order.set(r.recordId,r));
+    if(need.length){await fullLoad(need);n+=need.length}
+    const noMF=KEYS.filter(k=>!mfField(k));
+    if(Date.now()-SYNC.lastFull>(noMF.length?5*60e3:SYNC.full)){await fullLoad(KEYS);n++}
+    SYNC.lastPoll=Date.now();if(n){SYNC.changes+=n;rebuild('đã đồng bộ với Lark')}else stamp()}
+  catch(e){console.error(e)}finally{SYNCING=false}}
+function startPolling(){
+  if(IS_WEB()){setInterval(()=>{if(document.visibilityState==='visible')pollChanges()},SYNC.poll);
+    document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&Date.now()-SYNC.lastPoll>15e3)pollChanges()})}
+  else setInterval(async()=>{if(document.visibilityState==='visible'&&Date.now()-SYNC.lastFull>SYNC.full&&!SYNCING){SYNCING=true;try{await fullLoad(KEYS);rebuild()}catch(e){}finally{SYNCING=false}}},60e3)}
+
 async function boot(){
-  const L=$('#loader'),bar=$('#lbar'),msg=$('#lmsg');L.classList.add('on');
-  if(typeof bitable==='undefined'||!bitable.base){msg.innerHTML='Plugin này cần mở <b>bên trong Lark Base</b> (Tiện ích mở rộng → Thêm tiện ích tuỳ chỉnh).';bar.style.width='0';return}
-  const P={};const prog=(k,n,t)=>{P[k]=[n,t];const a=Object.values(P).reduce((s,x)=>s+x[0],0),b=Object.values(P).reduce((s,x)=>s+Math.max(x[1],x[0]),0)||1;
-    bar.style.width=Math.min(a/b*100,100)+'%';msg.textContent=`Đang đọc dữ liệu Lark Base · ${fmt(a)} / ${fmt(b)} dòng`};
+  if(BOOTING)return;BOOTING=true;hookClose();
+  const L=$('#loader'),bar=$('#lbar'),msg=$('#lmsg'),rl=$('#reload');
+  if(typeof bitable==='undefined'||!bitable.base){L.classList.add('on');msg.innerHTML='Plugin này cần mở <b>bên trong Lark Base</b> (Tiện ích mở rộng → Tuỳ chỉnh).';bar.style.width='0';BOOTING=false;return}
+  const first=!LOADED_AT;
   try{
-    const keys=['lead','order','pay','cust','cost'],res=await Promise.all(keys.map(k=>loadTable(k,prog)));
-    build(Object.fromEntries(keys.map((k,i)=>[k,res[i]])));await loadViews();
-    for(const k of Object.keys(VSEL))if(VSEL[k])await pickView(k,VSEL[k].id);
-    LOADED_AT=new Date();$('#upd').textContent='Cập nhật '+LOADED_AT.toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'})+' · '+LOADED_AT.toLocaleDateString('vi-VN');
-    initFilters();L.classList.remove('on');go(page);
-  }catch(e){console.error(e);msg.innerHTML='Lỗi đọc dữ liệu: '+(e?.message||e)+'<br><button class="more" onclick="boot()">Thử lại</button>'}
+    if(first){L.classList.add('on');msg.textContent='Đang kết nối Lark Base…'}
+    // 1) có dữ liệu đệm → hiện ngay (không chờ Lark, mở được cả khi mất mạng)
+    const showCache=async()=>{const c=await cacheGet();
+      if(c&&c.R&&c.M&&c.base===(window.__BASE__||'plugin')){KEYS.forEach(k=>{const byName={};(c.M[k]||[]).forEach(m=>byName[norm(m.name)]=m);META[k]={t:null,byName}});KEYS.forEach(k=>RAW[k]=new Map((c.R[k]||[]).map(r=>[r.recordId,r])));build(c.R);LOADED_AT=new Date(c.at);
+        initFilters();L.classList.remove('on');stamp(navigator.onLine===false?' · đang ngoại tuyến':' · đang tải bản mới…');go(page)}};
+    if(first&&(!window.__HASPASS__||window.__HASPASS__()))await showCache();
+    if(window.__AUTH__)await window.__AUTH__();
+    if(first&&!LOADED_AT)await showCache();
+    const fresh=!!LOADED_AT;rl.disabled=true;rl.textContent='⟳ Đang cập nhật…';
+    for(const k of KEYS)if(!META[k]||!META[k].t)await openTable(k);
+    // 2) tải bản đầy đủ mới nhất
+    const P={};const prog=(k,n,t)=>{P[k]=[n,t];const a=Object.values(P).reduce((s,x)=>s+x[0],0),b=Object.values(P).reduce((s,x)=>s+Math.max(x[1],x[0]),0)||1;
+      if(fresh)rl.textContent='⟳ '+Math.min(Math.round(a/b*100),99)+'%';else{bar.style.width=Math.min(a/b*100,100)+'%';msg.innerHTML=`Đang đọc dữ liệu Lark Base · ${fmt(a)} dòng<br><small>${KEYS.map(k=>`${TNAME[k]}: ${P[k]?(P[k][0]>=P[k][1]?'✓':fmt(P[k][0])+'/'+fmt(P[k][1])):(IS_WEB()?'chờ…':'đang tải…')}`).join(' · ')}</small><small id="lretry" class="warn"></small>`}};
+    await fullLoad(KEYS,prog);rebuild();await loadViews();for(const k of Object.keys(VSEL))if(VSEL[k])await pickView(k,VSEL[k].id);
+    initFilters();L.classList.remove('on');if(first&&!fresh)go(page);else render();
+    if(!boot.started){boot.started=1;listenLark();startPolling()}
+    if(fresh&&!first)toast('✓ Đã tải lại toàn bộ từ Lark');
+  }catch(e){console.error(e);if(!LOADED_AT){L.classList.add('on');msg.innerHTML='Lỗi đọc dữ liệu: '+esc(e?.message||e)+'<br><button class="more" onclick="boot()">Thử lại</button>'}else{L.classList.remove('on');toast('Không cập nhật được: '+(e?.message||e))}}
+  finally{BOOTING=false;rl.disabled=false;rl.textContent='↻ Làm mới'}
 }
 
 /* ================= GIAO DIỆN ================= */
 const fmt=n=>Math.round(n||0).toLocaleString('vi-VN');
 const vnd=n=>fmt(n)+'đ';
-const tr=n=>{const m=(n||0)/1e6,a=Math.abs(m);if(a>=1000)return (m/1000).toFixed(a>=10000?0:1).replace('.',',')+' tỷ';return (a>=100?String(Math.round(m)):m.toFixed(1).replace(/\.0$/,'')).replace('.',',')+'tr'};
+const tr=n=>fmt(n)+'đ'; // hiển thị chính xác từng đồng, giống Lark
 const toast=t=>{const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('on'),2600)};
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const dfmt=d=>d?String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0'):'—';
@@ -636,7 +783,7 @@ function go(id){page=id;closeAll();$$('[data-go]').forEach(b=>b.classList.toggle
 document.addEventListener('click',e=>{const g=e.target.closest('[data-go],[data-goto]');if(g){go(g.dataset.go||g.dataset.goto);return}
   if(e.target.closest('[data-more]')){$('#ov').classList.add('on');$('#msheet').classList.add('on');return}
   if(e.target.closest('[data-close]')||e.target.id==='ov')closeAll();});
-function closeAll(){['#ov','#drawer','#msheet'].forEach(s=>$(s).classList.remove('on'))}
+let closeAll=function(){['#ov','#drawer','#msheet'].forEach(s=>$(s).classList.remove('on'))};
 $('#reload').onclick=()=>boot();
 
 /* bộ lọc */
@@ -647,7 +794,7 @@ const inPer=x=>inView(x)&&within(dateOf(x),range(FLT.period));
 const inPrev=x=>{const r=range(FLT.period,true);return !!r&&inView(x)&&within(dateOf(x),r)};
 const delta=(cur,prev)=>{if(!range(FLT.period,true))return '';if(!prev)return cur?'Kỳ trước: 0':'';const p=(cur-prev)/Math.abs(prev)*100;return (p>=0?'▲ +':'▼ ')+p.toFixed(1).replace('.',',')+'% so với kỳ trước'};
 $('#fper').innerHTML=PERIODS.map(p=>`<option value="${p[0]}">${p[1]}</option>`).join('');
-function syncFilters(){const k=PAGEK[page];$('#fper').value=FLT.period;
+let syncFilters=function(){const k=PAGEK[page];$('#fper').value=FLT.period;
   $('#fmonth').hidden=FLT.period!=='pickmonth';$('#frange').hidden=FLT.period!=='custom';
   if(FLT.period==='pickmonth'&&!$('#fmonth').value){const t=TODAY();$('#fmonth').value=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0');FLT.month=$('#fmonth').value}
   const fo=DFOPT[k];$('#ffield').hidden=!fo;if(fo)$('#ffield').innerHTML=fo.map(o=>`<option value="${o[0]}" ${DF[k]===o[0]?'selected':''}>Theo ${o[1].toLowerCase()}</option>`).join('');
@@ -655,7 +802,7 @@ function syncFilters(){const k=PAGEK[page];$('#fper').value=FLT.period;
   $('#fview').innerHTML=`<option value="">View Lark: không dùng</option>`+vs.map(v=>`<option value="${v.id}" ${VSEL[k]?.id===v.id?'selected':''}>View: ${esc(v.name)}</option>`).join('');
   const act=Object.entries(VSEL).filter(([,v])=>v).map(([kk,v])=>`${KNAME[kk]} › ${v.name}`);
   $('#fnote').innerHTML=`<b>${esc(perLabel())}</b>${fo?' · '+esc(fo.find(o=>o[0]===DF[k])[1].toLowerCase()):''}${act.length?' · view Lark: '+esc(act.join(', '))+' <a id="vclear">bỏ view</a>':''}`;
-  const vc=$('#vclear');if(vc)vc.onclick=()=>{for(const kk in VSEL)VSEL[kk]=null;syncFilters();render()}}
+  const vc=$('#vclear');if(vc)vc.onclick=()=>{for(const kk in VSEL)VSEL[kk]=null;syncFilters();render()}};
 function setPer(p){FLT.period=p;syncFilters()}
 $('#fper').onchange=e=>{setPer(e.target.value);render()};
 $('#fmonth').onchange=e=>{FLT.month=e.target.value;syncFilters();render()};
@@ -679,7 +826,7 @@ function table(el,rows,cols,card,onOpen,limit=40){
 }
 function chips(el,list,cur,set){el.innerHTML=list.map(c=>`<button class="chip ${cur===c[0]?'on':''}" data-c="${esc(c[0])}">${esc(c[1])}<b>${fmt(c[2])}</b></button>`).join('');
   el.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{set(b.dataset.c);render()})}
-const fillSel=(s,a)=>{const e=$(s),f=e.options[0].outerHTML;e.innerHTML=f+a.map(x=>`<option>${esc(x)}</option>`).join('')};
+const fillSel=(s,a)=>{const e=$(s),cur=e.value,f=e.options[0].outerHTML;e.innerHTML=f+a.map(x=>`<option>${esc(x)}</option>`).join('');if(cur&&a.includes(cur))e.value=cur};
 const kpi=(l,v,s,cls='',goto='')=>`<div class="card ${cls}" ${goto?`data-goto="${goto}"`:''}><div class="lbl">${l}</div><div class="big">${v}</div>${s?`<div class="${s.startsWith('▲')?'up':s.startsWith('▼')?'down':'sub'}">${s}</div>`:''}</div>`;
 const srcH=s=>`<span class="src"><i style="background:${SRCC[s]||'#9AA0B4'}"></i>${esc(s)}</span>`;
 const fld=(k,v)=>`<div class="fld"><span>${k}</span><b>${v}</b></div>`;
@@ -695,7 +842,7 @@ function revSeries(){const r=range(FLT.period),f=DF.order,end=day0(r?addD(r[1],-
   const sum=(a,b)=>sumF(orders.filter(o=>inView(o)&&within(o[f],[a,b])),'sell')/1e6,out=[];
   if(span>45){const n=Math.min(12,Math.max(6,Math.ceil(Math.min(span,366)/30.4)));for(let k=n-1;k>=0;k--){const a=new Date(end.getFullYear(),end.getMonth()-k,1),b=new Date(end.getFullYear(),end.getMonth()-k+1,1);out.push(['T'+(a.getMonth()+1)+(a.getFullYear()!==TODAY().getFullYear()?'/'+String(a.getFullYear()).slice(2):''),sum(a,b)])}}
   else{const n=Math.max(7,Math.round(span));for(let k=n-1;k>=0;k--){const a=addD(end,-k);out.push([dfmt(a),sum(a,addD(a,1))])}}
-  return out.map(x=>[x[0],Math.round(x[1]*10)/10])}
+  return out.map(x=>[x[0],Math.round(x[1]*10)/10,Math.round(x[1]*1e6)])}
 let cmode='line';
 function mount(el,svg,tipFn){el.querySelector('svg')?.remove();el.insertAdjacentHTML('afterbegin',svg);const tip=el.querySelector('.tip');
   el.querySelectorAll('[data-k]').forEach(n=>{const show=()=>{const r=n.getBoundingClientRect(),c=el.getBoundingClientRect();tip.textContent=tipFn(+n.dataset.k);tip.style.left=(r.left+r.width/2-c.left)+'px';tip.style.top=(r.top-c.top)+'px';tip.style.opacity=1};
@@ -708,9 +855,9 @@ function lineChart(el,data,mode){
     s+=`<polygon points="${x(0)},${H-p} ${pts} ${x(v.length-1)},${H-p}" fill="url(#ga)"/><polyline points="${pts}" fill="none" stroke="url(#gb)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>`;
     v.forEach((t,i)=>s+=`<circle data-k="${i}" cx="${x(i)}" cy="${y(t)}" r="${i===v.length-1?7:v.length>14?3:5}" fill="#fff" stroke="${i===v.length-1?'#FF5A5F':'#F0A06A'}" stroke-width="3" style="cursor:pointer"/>`);}
   else v.forEach((t,i)=>s+=`<rect data-k="${i}" x="${x(i)-Math.min(17,(W-2*p)/v.length/2.6)}" y="${y(t)}" width="${Math.min(34,(W-2*p)/v.length/1.3)}" height="${H-p-y(t)}" rx="7" fill="${i===v.length-1?'url(#gb)':'#FFD3C4'}" style="cursor:pointer"/>`);
-  const st=Math.ceil(data.length/10);data.forEach((d,i)=>{if(i%st===0||i===data.length-1)s+=`<text x="${x(i)}" y="${H-8}" text-anchor="middle" font-size="12" fill="#7A7F93" font-weight="600">${d[0]}</text>`});
-  const L=v.length-1;s+=`<text x="${x(L)}" y="${y(v[L])-14}" text-anchor="end" font-size="13" fill="#FF5A5F" font-weight="800">${String(v[L]).replace('.',',')}tr</text></svg>`;
-  mount(el,s,i=>`${data[i][0]}: ${vnd(v[i]*1e6)}`+(i&&v[i-1]?` (${v[i]>=v[i-1]?'+':''}${((v[i]-v[i-1])/v[i-1]*100).toFixed(1).replace('.',',')}%)`:''));}
+  const st=Math.ceil(data.length/10),LL=data.length-1;data.forEach((d,i)=>{if((i%st===0&&LL-i>=Math.max(st*0.75,1))||i===LL)s+=`<text x="${x(i)}" y="${H-8}" text-anchor="middle" font-size="12" fill="#7A7F93" font-weight="600">${d[0]}</text>`});
+  const L=v.length-1;s+=`<text x="${x(L)}" y="${y(v[L])-14}" text-anchor="end" font-size="13" fill="#FF5A5F" font-weight="800">${vnd(data[L][2]??v[L]*1e6)}</text></svg>`;
+  mount(el,s,i=>`${data[i][0]}: ${vnd(data[i][2]??v[i]*1e6)}`+(i&&v[i-1]?` (${v[i]>=v[i-1]?'+':''}${((v[i]-v[i-1])/v[i-1]*100).toFixed(1).replace('.',',')}%)`:''));}
 $$('#cmode button').forEach(b=>b.onclick=()=>{cmode=b.dataset.m;$$('#cmode button').forEach(x=>x.classList.toggle('on',x===b));renderOverview()});
 
 /* TỔNG QUAN */
@@ -902,8 +1049,7 @@ function renderReport(){const O=orders.filter(inPer),Op=orders.filter(inPrev),se
   let s=`<svg viewBox="0 0 ${W} ${H}">`;[.25,.5,.75,1].forEach(f=>s+=`<line x1="${p}" x2="${W-p}" y1="${y(mx*f)}" y2="${y(mx*f)}" stroke="#F1E6E1" stroke-dasharray="3 4"/>`);
   PM.forEach((m,i)=>{s+=`<rect data-k="${i}" x="${x(i)-bw-1}" y="${y(m[1])}" width="${bw}" height="${H-p-y(m[1])}" rx="5" fill="${i===5?'#FF8A7A':'#FFD3C4'}" style="cursor:pointer"/><rect data-k="${i}" x="${x(i)+1}" y="${y(m[2])}" width="${bw}" height="${H-p-y(m[2])}" rx="5" fill="#C9CCD8" style="cursor:pointer"/><text x="${x(i)}" y="${H-8}" text-anchor="middle" font-size="12" fill="#7A7F93" font-weight="600">${m[0]}</text>`});
   s+=`<polyline points="${PM.map((m,i)=>`${x(i)},${y(m[1]-m[2])}`).join(' ')}" fill="none" stroke="#22A06B" stroke-width="3" stroke-linecap="round"/>${PM.map((m,i)=>`<circle cx="${x(i)}" cy="${y(m[1]-m[2])}" r="4" fill="#fff" stroke="#22A06B" stroke-width="2.5"/>`).join('')}</svg>`;
-  const r1=v=>(Math.round(v*10)/10).toString().replace('.',',');
-  mount($('#pchart'),s,i=>`${PM[i][0]}: bán ${r1(PM[i][1])}tr · mua ${r1(PM[i][2])}tr · lãi ${r1(PM[i][1]-PM[i][2])}tr`);
+  mount($('#pchart'),s,i=>`${PM[i][0]}: bán ${vnd(PM[i][1]*1e6)} · mua ${vnd(PM[i][2]*1e6)} · lãi ${vnd((PM[i][1]-PM[i][2])*1e6)}`);
   const ac={};O.forEach(o=>ac[o.area]=(ac[o.area]||0)+o.profit);const ar=Object.entries(ac).sort((a,b)=>b[1]-a[1]).slice(0,8),am=Math.max(...ar.map(a=>a[1]),1);
   $('#rarea').innerHTML=ar.map(a=>`<div class="hbar"><span class="nm">${esc(a[0])}</span><div class="tr"><div data-w="${Math.max(a[1],0)/am*100}" style="background:linear-gradient(90deg,#22A06B,#7DD3A8)"></div></div><em>${tr(a[1])}</em></div>`).join('')||'<div class="empty">Chưa có đơn trong kỳ</div>';
   const sl=saleStats().filter(s=>s.orders).sort((a,b)=>b.profit-a.profit),sm=Math.max(...sl.map(s=>s.profit),1);
@@ -922,6 +1068,174 @@ function badges(){const b=(id,n)=>{const e=$('#nb_'+id);e.textContent=n>999?'999
 function render(){if(!LOADED_AT)return;({overview:renderOverview,leads:renderLeads,sales:renderSales,care:renderCare,orders:renderOrders,payments:renderPayments,costs:renderCosts,customers:renderCustomers,report:renderReport})[page]();badges()}
 addEventListener('resize',()=>{clearTimeout(window._rz);window._rz=setTimeout(render,150)});
 go('overview');boot();
+
+/* ================= NHẬP LIỆU: thêm / sửa bản ghi, ghi thẳng vào Lark =================
+   Dùng chung cho plugin trong Lark (SDK) và bản web (REST qua Worker). Giá trị ghi theo định dạng SDK;
+   lớp REST tự chuyển sang định dạng API. */
+const FORM_F={
+  lead:['Tên khách hàng','Số điện thoại','Ngày liên hệ','Nguồn KH','Nguồn Kênh','Khu vực khách hàng lựa chọn','Loại khách hàng','SL người lớn','SL trẻ em','Ngày Checkin','Ngày Checkout','Yêu cầu cụ thể','Sale chính','Tình  trạng|Tình trạng','Lý do thất bại','Mã đơn hàng','Sale note','Chăm sóc lần 1','Chăm sóc lần 2','Chăm sóc lần 3','Cần Check căn'],
+  order:['MÃ ĐƠN HÀNG','Tên khách hàng','Số điện thoại','Tên dịch vụ','Khu vực chốt','Ngày chốt','Ngày khởi hành','Ngày kết thúc','Số ngày tour','Số lượng khách người lớn','Số lượng khách trẻ em','Gía bán|Giá bán','Gía mua|Giá mua','Sale chính','Điều hành','Nhân sự sản phẩm','Quản lý kênh','Nguồn khách hàng','Khách mới hay cũ','Loại Khách hàng','Thông tin người thu','Điều hành xác nhận công việc'],
+  pay:['Đơn hàng','Mã ĐH','Số tiền thanh toán VNĐ','Ngày thanh toán','Loại thanh toán','Hình thức thanh toán','Tài khoản nhận tiền','Trạng thái thanh toán','Trạng thái khớp','Mã giao dịch','Nội dung CK','Ngày xuất hoá đơn','Số tiền xuất hoá đơn'],
+  cost:['Đơn hàng','Tên thanh toán','Tổng VNĐ','Ngày chi','Loại thanh toán','Hình thức thanh toán','Trạng thái thanh toán','STK Ngân Hàng','Ngày xuất hoá đơn','Số tiền xuất hoá đơn'],
+  cust:['Tên khách hàng','Số điện thoại','Email','Nguồn khách hàng','Loại tour','Quốc tịch']};
+const REQ={lead:['Tên khách hàng'],order:['MÃ ĐƠN HÀNG','Gía bán|Giá bán'],pay:['Đơn hàng','Số tiền thanh toán VNĐ'],cost:['Tên thanh toán','Tổng VNĐ'],cust:['Tên khách hàng']};
+const WRITABLE=[1,2,3,4,5,7,11,13,15,18,21];
+const linkTable=m=>m.property?.tableId||m.property?.table_id||({'đơn hàng':TID.order,'quản lý khách hàng':TID.cust,'lịch sử đơn hàng':TID.order})[norm(m.name)]||'';
+const optsOf=m=>(m.property?.options||[]).map(o=>({id:o.id,name:o.name})).filter(o=>o.name);
+const ymd=d=>d?`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`:'';
+const digits=s=>String(s||'').replace(/\D/g,'');
+
+/* danh sách người dùng Lark (lấy từ các ô người dùng đã có) */
+function usersList(){const U=new Map();
+  for(const k of KEYS)for(const m of Object.values(META[k].byName))if(m.type===11||m.type===1003)for(const r of RAW[k].values()){const v=r.fields[m.id];
+    (Array.isArray(v)?v:v&&typeof v==='object'&&Array.isArray(v.value)?v.value:[]).forEach(u=>{if(u&&u.id&&!U.has(u.id))U.set(u.id,person(u)||u.id)})}
+  return [...U].map(([id,name])=>({id,name})).sort((a,b)=>a.name.localeCompare(b.name,'vi'))}
+const firstUserId=v=>{const a=Array.isArray(v)?v:v&&Array.isArray(v.value)?v.value:[];return a[0]?.id||''};
+
+/* giá trị ô → giá trị ô nhập */
+function toInput(m,v){if(v==null)return m.type===7?false:'';
+  switch(m.type){case 2:return num(v)||'';case 5:return ymd(dt(v));case 7:return chk(v);case 11:return firstUserId(v);
+    case 18:case 21:return links(v)[0]||'';case 4:return first(v);default:return txt(v)}}
+/* giá trị ô nhập → giá trị ghi vào Lark (định dạng SDK) */
+function toCell(m,val){
+  switch(m.type){
+    case 1:case 15:return val?[{type:'text',text:String(val)}]:null;
+    case 13:return val?String(val):null;
+    case 2:{const n=num(val);return val===''||val==null?null:n}
+    case 3:{if(!val)return null;const o=optsOf(m).find(o=>norm(o.name)===norm(val));return o?{id:o.id,text:o.name}:(IS_WEB()?{id:'',text:String(val)}:undefined)}
+    case 4:{if(!val)return null;const o=optsOf(m).find(o=>norm(o.name)===norm(val));return o?[{id:o.id,text:o.name}]:(IS_WEB()?[{id:'',text:String(val)}]:undefined)}
+    case 5:{if(!val)return null;const [y,mo,d]=String(val).split('-').map(Number);return new Date(y,mo-1,d,12).getTime()}
+    case 7:return !!val;
+    case 11:return val?[{id:val}]:null;
+    case 18:case 21:return val?{recordIds:[val],tableId:linkTable(m),text:'',type:'text'}:null;
+  }return val}
+
+/* ô nhập theo loại trường */
+function inputHTML(k,m,val,key){const id=`f_${key}`,req=REQ[k].some(r=>r.split('|').some(n=>norm(n)===norm(m.name)))?' required':'';
+  switch(m.type){
+    case 3:case 4:{const o=optsOf(m);if(val&&!o.some(x=>norm(x.name)===norm(val)))o.unshift({name:val});return `<select class="sel fi" id="${id}"${req}><option value="">—</option>${o.map(x=>`<option ${norm(x.name)===norm(val)?'selected':''}>${esc(x.name)}</option>`).join('')}</select>`}
+    case 5:return `<input type="date" class="sel fi" id="${id}" value="${esc(val)}"${req}>`;
+    case 7:return `<label class="ck ${val?'on':''}" style="margin:0"><input type="checkbox" id="${id}" ${val?'checked':''} hidden><span class="bx">✓</span>Có</label>`;
+    case 2:return `<input class="sel fi money-in" id="${id}" inputmode="numeric" value="${val===''?'':fmt(val)}" placeholder="0"${req}>`;
+    case 11:{const U=usersList();return `<select class="sel fi" id="${id}"${req}><option value="">—</option>${U.map(u=>`<option value="${esc(u.id)}" ${u.id===val?'selected':''}>${esc(u.name)}</option>`).join('')}</select>`}
+    case 18:case 21:{const tk=Object.keys(TID).find(x=>TID[x]===linkTable(m));
+      if(tk==='order'){const o=orders.find(o=>o.rid===val);return `<input class="sel fi" id="${id}" list="dl_orders" value="${esc(o?o.code:'')}" placeholder="Gõ mã đơn…"${req}><datalist id="dl_orders">${orders.slice().sort((a,b)=>(b.close||0)-(a.close||0)).slice(0,800).map(o=>`<option value="${esc(o.code)}">${esc(o.cust)} · ${fmt(o.sell)}đ</option>`).join('')}</datalist>`}
+      if(tk==='cust'){const u=customers.find(u=>u.rid===val);return `<input class="sel fi" id="${id}" list="dl_cust" value="${esc(u?u.name+' · '+u.phone:'')}" placeholder="Gõ tên / SĐT…"><datalist id="dl_cust">${customers.slice(0,3000).map(u=>`<option value="${esc(u.name+' · '+u.phone)}"></option>`).join('')}</datalist>`}
+      return `<span class="sub">—</span>`}
+    case 1:if(/yêu cầu|note|nội dung|lý do/i.test(m.name))return `<textarea class="fi" id="${id}" rows="2"${req}>${esc(val)}</textarea>`;
+    default:return `<input class="sel fi" id="${id}" value="${esc(val)}" ${m.type===13?'inputmode="tel"':''}${req}>`}}
+function readInput(k,m,key){const e=$(`#f_${key}`);if(!e)return undefined;
+  if(m.type===7)return e.checked;if(m.type===2)return e.value.trim()===''?'':num(e.value);
+  if(m.type===18||m.type===21){const tk=Object.keys(TID).find(x=>TID[x]===linkTable(m)),v=e.value.trim();if(!v)return '';
+    if(tk==='order'){const o=orders.find(o=>norm(o.code)===norm(v));return o?o.rid:null}
+    if(tk==='cust'){const u=customers.find(u=>norm(u.name+' · '+u.phone)===norm(v))||customers.find(u=>digits(u.phone)&&digits(u.phone)===digits(v));return u?u.rid:null}}
+  return e.value.trim()}
+
+/* ghi vào Lark */
+async function larkWrite(k,rid,fields){const t=META[k].t||await openTable(k);
+  if(rid){await t.setRecord(rid,{fields});return rid}
+  const r=await t.addRecord({fields});return typeof r==='string'?r:(r?.recordId||r?.record_id||r)}
+async function refreshIds(k,ids){try{await applyChanges({[k]:{up:new Set(ids.filter(Boolean)),del:new Set}})}catch(e){console.error(e)}}
+
+/* form chung: k = bảng, rid = bản ghi (null = thêm mới), pre = giá trị điền sẵn {tên trường: giá trị} */
+function openForm(k,rid,{title,sub='',pre={},after,extraNote=''}={}){
+  const rec=rid?RAW[k].get(rid):null,ms=[];
+  for(const spec of FORM_F[k]){const m=fmeta(k,...spec.split('|'));if(m&&WRITABLE.includes(m.type)&&!ms.includes(m))ms.push(m)}
+  const init={};ms.forEach((m,i)=>{const p=Object.keys(pre).find(n=>n.split('|').some(x=>norm(x)===norm(m.name)));init[i]=p!=null?pre[p]:rec?toInput(m,rec.fields[m.id]):(m.type===7?false:'')});
+  drawer(title||(rid?'Sửa':'Thêm mới'),sub,
+    `${extraNote?`<div class="note" style="margin:0 0 8px;font-style:normal">${extraNote}</div>`:''}<form id="lform" onsubmit="return false">${ms.map((m,i)=>`<div class="fld"><span>${esc(m.name.replace(/\s+/g,' '))}${REQ[k].some(r=>r.split('|').some(n=>norm(n)===norm(m.name)))?' *':''}</span><div>${inputHTML(k,m,init[i],i)}</div></div>`).join('')}</form>
+     <div class="note">Lưu là ghi thẳng vào bảng "${esc(TNAME[k])}" trên Lark.</div>`,
+    [['Huỷ',closeAll],[rid?'Lưu vào Lark':'＋ Thêm vào Lark',async e=>{
+      const btn=e.currentTarget,fields={},bad=[];
+      ms.forEach((m,i)=>{const v=readInput(k,m,i);if(v===undefined)return;
+        if(v===null){bad.push(m.name+' (không tìm thấy)');return}
+        const isReq=REQ[k].some(r=>r.split('|').some(n=>norm(n)===norm(m.name)));if(isReq&&(v===''||v===false))bad.push(m.name);
+        if(rid&&JSON.stringify(v)===JSON.stringify(init[i]))return;if(!rid&&(v===''||v===false))return;
+        const c=toCell(m,v);if(c!==undefined)fields[m.id]=c});
+      if(bad.length){toast('Cần điền: '+bad.join(', '));return}
+      if(rid&&!Object.keys(fields).length){toast('Không có thay đổi');return}
+      btn.disabled=true;btn.textContent='Đang lưu…';
+      try{const id=await larkWrite(k,rid,fields);await refreshIds(k,[id]);closeAll();toast(`✓ Đã ${rid?'lưu':'thêm'} vào Lark`);if(after)await after(id,fields)}
+      catch(err){console.error(err);btn.disabled=false;btn.textContent='Thử lại';toast('Không lưu được: '+(err?.message||err))}}]]);
+  $$('#lform .money-in').forEach(i=>i.onblur=()=>{if(i.value.trim())i.value=fmt(num(i.value))});
+  $$('#lform label.ck').forEach(l=>l.onclick=e=>{e.preventDefault();const c=l.querySelector('input');c.checked=!c.checked;l.classList.toggle('on',c.checked)});}
+
+/* ---- quy trình ---- */
+const rawOf=(k,rid)=>RAW[k].get(rid);
+const rawVal=(k,rid,...names)=>{const m=fmeta(k,...names),r=rawOf(k,rid);return m&&r?r.fields[m.id]:undefined};
+function newOrderCode(d=TODAY()){const p='DH'+String(d.getDate()).padStart(2,'0')+String(d.getMonth()+1).padStart(2,'0')+String(d.getFullYear()).slice(2);
+  let n=1;const used=new Set(orders.map(o=>norm(o.code)));while(used.has(norm(p+n)))n++;return p+n}
+function findCustomer(phone,name){const p=digits(phone);return (p.length>=8&&customers.find(u=>digits(u.phone).endsWith(p.slice(-9))))||(name&&customers.find(u=>norm(u.name)===norm(name)&&!digits(u.phone)))||null}
+
+// đơn hàng vừa tạo: tìm/ tạo khách hàng rồi liên kết; cập nhật lead nguồn
+async function afterOrder(orderRid,leadId){
+  const o=orders.find(o=>o.rid===orderRid);if(!o)return;
+  try{const lm=fmeta('order','Quản lý khách hàng');
+    if(lm&&!links(rawVal('order',orderRid,'Quản lý khách hàng')).length){
+      let u=findCustomer(o.phone,o.cust),crid=u?.rid;
+      if(!crid){const cm=n=>fmeta('cust',n),f={};
+        if(cm('Tên khách hàng'))f[cm('Tên khách hàng').id]=toCell(cm('Tên khách hàng'),o.cust);
+        if(cm('Số điện thoại')&&o.phone)f[cm('Số điện thoại').id]=toCell(cm('Số điện thoại'),o.phone);
+        if(cm('Nguồn khách hàng')&&o.src&&o.src!=='Khác')f[cm('Nguồn khách hàng').id]=toCell(cm('Nguồn khách hàng'),o.src);
+        crid=await larkWrite('cust',null,f);await refreshIds('cust',[crid]);toast('✓ Đã tạo khách hàng mới: '+o.cust)}
+      await larkWrite('order',orderRid,{[lm.id]:toCell(lm,crid)});await refreshIds('order',[orderRid])}
+    if(leadId!=null){const l=leads[leadId],ch={};const cm=fmeta('lead','Mã đơn hàng'),sm=fmeta('lead','Tình  trạng','Tình trạng');
+      if(cm&&norm(l.code)!==norm(o.code))ch[cm.id]=toCell(cm,o.code);if(sm&&l.st!=='Khách thành công')ch[sm.id]=toCell(sm,'Khách thành công');
+      if(Object.keys(ch).length){await larkWrite('lead',l.rid,ch);await refreshIds('lead',[l.rid])}}
+  }catch(e){console.error(e);toast('Đã tạo đơn, nhưng chưa liên kết được khách hàng: '+(e?.message||e))}
+  const oo=orders.find(x=>x.rid===orderRid);if(oo)openOrder(oo.id)}
+
+function orderFromLead(id){const l=leads[id],ex=l.code&&orders.find(o=>norm(o.code)===norm(l.code));
+  if(ex){toast('Lead này đã có đơn '+ex.code);openOrder(ex.id);return}
+  const cu=findCustomer(l.phone,l.name),code=l.code&&/^DH\d+/i.test(l.code)?l.code:newOrderCode();
+  const lkh=txt(rawVal('lead',l.rid,'Loại khách hàng'));
+  openForm('order',null,{title:'Tạo đơn hàng từ lead',sub:`${esc(l.name)} · ${esc(l.phone||'')} · đã điền sẵn từ lead`,
+    pre:{'MÃ ĐƠN HÀNG':code,'Tên khách hàng':l.name,'Số điện thoại':l.phone,'Tên dịch vụ':l.req!=='—'?l.req:'','Khu vực chốt':l.area!=='Chưa chọn'?l.area:'',
+      'Ngày chốt':ymd(TODAY()),'Ngày khởi hành':ymd(l.ci),'Ngày kết thúc':ymd(l.co),'Số lượng khách người lớn':l.adults||'','Số lượng khách trẻ em':l.kids||'',
+      'Sale chính':firstUserId(rawVal('lead',l.rid,'Sale chính')),'Nguồn khách hàng':l.src!=='Khác'?l.src:'','Khách mới hay cũ':cu?'Khách cũ':'Khách mới','Loại Khách hàng':lkh},
+    extraNote:cu?`Khách đã có trong "Quản lý khách hàng" (${esc(cu.name)}) — đơn sẽ tự liên kết.`:'Khách chưa có trong "Quản lý khách hàng" — sẽ tự tạo và liên kết khi lưu.',
+    after:rid=>afterOrder(rid,id)})}
+function newPayment(o){openForm('pay',null,{title:'＋ Phiếu thu',sub:o?`${esc(o.code)} · ${esc(o.cust)} · khách còn nợ ${vnd(o.debt)}`:'',
+  pre:o?{'Đơn hàng':o.rid,'Mã ĐH':o.code,'Số tiền thanh toán VNĐ':o.debt>0?o.debt:'','Ngày thanh toán':ymd(TODAY()),'Trạng thái thanh toán':'Đã thanh toán','Nội dung CK':o.code+' '+(o.cust||'').toUpperCase()}:{'Ngày thanh toán':ymd(TODAY()),'Trạng thái thanh toán':'Đã thanh toán'},
+  after:async rid=>{const m=fmeta('pay','Mã ĐH'),p=payments.find(p=>p.rid===rid);if(m&&p&&p.oid!=null&&!txt(rawVal('pay',rid,'Mã ĐH'))){await larkWrite('pay',rid,{[m.id]:toCell(m,orders[p.oid].code)});await refreshIds('pay',[rid])}
+    if(p&&p.oid!=null)await refreshIds('order',[orders[p.oid].rid]);if(o){const oo=orders.find(x=>x.rid===o.rid);if(oo)openOrder(oo.id)}}})}
+function newCost(o){openForm('cost',null,{title:'＋ Phiếu chi',sub:o?`${esc(o.code)} · ${esc(o.cust)} · còn nợ đối tác ${vnd(o.pdebt)}`:'',
+  pre:o?{'Đơn hàng':o.rid,'Tổng VNĐ':o.pdebt>0?o.pdebt:'','Ngày chi':ymd(TODAY()),'Trạng thái thanh toán':'Chưa thanh toán'}:{'Ngày chi':ymd(TODAY()),'Trạng thái thanh toán':'Chưa thanh toán'},
+  after:async rid=>{const c=costs.find(c=>c.rid===rid);if(c&&c.oid!=null)await refreshIds('order',[orders[c.oid].rid]);if(o){const oo=orders.find(x=>x.rid===o.rid);if(oo)openOrder(oo.id)}}})}
+async function markMatched(p){const m=fmeta('pay','Trạng thái khớp');if(!m){toast('Bảng thu tiền không có cột "Trạng thái khớp"');return}
+  const c=toCell(m,'Đã khớp');if(c===undefined){toast('Cột "Trạng thái khớp" chưa có lựa chọn "Đã khớp" trong Lark');return}
+  try{await larkWrite('pay',p.rid,{[m.id]:c});await refreshIds('pay',[p.rid]);toast('✓ Đã khớp sao kê · '+vnd(p.amount))}catch(e){toast('Không lưu được: '+(e?.message||e))}}
+
+/* ---- gắn nút vào giao diện ---- */
+const acts=list=>{const bar=document.createElement('div');bar.className='acts';
+  list.forEach(([t,fn,cls])=>{const b=document.createElement('button');b.className='abtn '+(cls||'');b.textContent=t;b.onclick=fn;bar.appendChild(b)});$('#dbody').prepend(bar)};
+const _openLead=openLead;openLead=function(id){_openLead(id);const l=leads[id],ex=l.code&&orders.find(o=>norm(o.code)===norm(l.code));
+  acts([['✏️ Sửa thông tin lead',()=>openForm('lead',l.rid,{title:'Sửa lead',sub:esc(l.name)})],ex?['📄 Xem đơn '+ex.code,()=>openOrder(ex.id)]:['→ Tạo đơn hàng',()=>orderFromLead(id),'p']]);
+  // chuyển sang "Khách thành công" → tự mở form tạo đơn
+  const prev=l.st,save=[...$$('#dfoot .btn')].pop();if(save)save.addEventListener('click',()=>{const st=$('#e_st')?.value;if(st==='Khách thành công'&&prev!=='Khách thành công'&&!ex)setTimeout(()=>orderFromLead(id),500)})};
+const _openOrder=openOrder;openOrder=function(id){_openOrder(id);const o=orders[id];
+  acts([['＋ Phiếu thu',()=>newPayment(o),'p'],['＋ Phiếu chi',()=>newCost(o)],['✏️ Sửa đơn',()=>openForm('order',o.rid,{title:'Sửa đơn '+o.code,sub:esc(o.cust)})]])};
+const _openPayment=openPayment;openPayment=function(id){_openPayment(id);const p=payments[id];
+  acts([...(/^đã khớp/i.test(p.match)?[]:[['✓ Đã khớp sao kê',()=>markMatched(p),'p']]),['✏️ Sửa phiếu thu',()=>openForm('pay',p.rid,{title:'Sửa phiếu thu',sub:esc(p.code+' · '+p.cust)})]])};
+const _openCost=openCost;openCost=function(id){_openCost(id);const c=costs[id];
+  acts([['✏️ Sửa phiếu chi',()=>openForm('cost',c.rid,{title:'Sửa phiếu chi',sub:esc(c.name)})]])};
+const _openCustomer=openCustomer;openCustomer=function(id){_openCustomer(id);const u=customers[id];if(!u)return;
+  acts([['✏️ Sửa khách hàng',()=>openForm('cust',u.rid,{title:'Sửa khách hàng',sub:esc(u.name)})],['＋ Tạo đơn cho khách này',()=>openForm('order',null,{title:'Tạo đơn hàng',sub:esc(u.name),
+    pre:{'MÃ ĐƠN HÀNG':newOrderCode(),'Tên khách hàng':u.name,'Số điện thoại':u.phone,'Ngày chốt':ymd(TODAY()),'Khách mới hay cũ':u.orders.length?'Khách cũ':'Khách mới','Nguồn khách hàng':u.src!=='Khác'?u.src:''},after:rid=>afterOrder(rid,null)}),'p']])};
+// nút "+ thêm" trên thanh công cụ từng trang
+[['leads','＋ Thêm lead',()=>openForm('lead',null,{title:'＋ Thêm lead',pre:{'Ngày liên hệ':ymd(TODAY()),'Tình  trạng|Tình trạng':'Khách mới'}})],
+ ['orders','＋ Tạo đơn',()=>openForm('order',null,{title:'＋ Tạo đơn hàng',pre:{'MÃ ĐƠN HÀNG':newOrderCode(),'Ngày chốt':ymd(TODAY())},after:rid=>afterOrder(rid,null)})],
+ ['payments','＋ Phiếu thu',()=>newPayment(null)],['costs','＋ Phiếu chi',()=>newCost(null)],
+ ['customers','＋ Khách hàng',()=>openForm('cust',null,{title:'＋ Thêm khách hàng'})]].forEach(([pid,t,fn])=>{
+  const tb=$(`#${pid} .toolbar`);if(!tb)return;const b=document.createElement('button');b.className='addbtn';b.textContent=t;b.onclick=()=>{if(!LOADED_AT){toast('Đang tải dữ liệu, chờ chút…');return}fn()};tb.prepend(b)});
+
+/* ---- điện thoại: nút "Lọc" gập/mở bộ lọc chi tiết ---- */
+(function(){const b=$('#ftog');if(!b)return;b.onclick=()=>{$('#flt').classList.toggle('open');upd()};
+  const upd=()=>{const k=PAGEK[page],act=!!(VSEL[k]||(DFOPT[k]&&DF[k]!==DFOPT[k][0][0]));b.classList.toggle('act',act);b.textContent=($('#flt').classList.contains('open')?'✕ Đóng':'⚙ Lọc')+(act?' •':'')};
+  const s0=syncFilters;syncFilters=function(){s0();upd()};
+  const q=new URLSearchParams(location.search).get('p');if(q&&TITLE[q])page=q;})();
+addEventListener('online',()=>{toast('Đã có mạng — đang cập nhật…');boot()});
+addEventListener('offline',()=>{toast('Mất mạng — đang xem dữ liệu đã lưu');stamp(' · đang ngoại tuyến')});
 
 </script>
 </body>
