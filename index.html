@@ -279,10 +279,41 @@ input.sel{font-weight:500}
 .ubtns{display:flex;gap:6px;margin-top:10px}.ubtn{flex:1;font-size:12px;font-weight:700;padding:8px;border-radius:9px;background:#fff;border:1px solid var(--line);color:var(--ink)}
 .ubox-wrap{margin-top:14px;padding:12px;border-radius:12px;background:var(--peach2)}
 .login{display:flex;flex-direction:column;gap:8px;margin-top:14px}.login .sel{font-size:16px;padding:11px 12px}.login .addbtn{box-shadow:none}#pwerr{font-size:12.5px;min-height:16px}
-.extlink{display:flex;align-items:center;gap:10px;margin:2px 0 6px;padding:11px 12px;border-radius:12px;font-size:13.5px;font-weight:800;color:#fff;background:linear-gradient(135deg,#1E2235,#3B4060);text-decoration:none;box-shadow:0 4px 14px rgba(30,34,53,.25)}
-.extlink svg{width:18px;height:18px;flex-shrink:0}.extlink.m{flex-direction:column;justify-content:center;text-align:center;font-size:12px;margin:0;padding:14px 6px;grid-column:1/-1;flex-direction:row}
-.checkbanner{display:flex;align-items:center;gap:12px;margin:0 0 14px;padding:12px 14px;border-radius:14px;background:linear-gradient(135deg,#1E2235,#3B4060);color:#fff;text-decoration:none}
-.checkbanner .ic{font-size:22px}.checkbanner b{display:block;font-size:14px}.checkbanner small{font-size:12px;opacity:.8}.checkbanner .go{margin-left:auto;font-weight:800;font-size:13px;background:rgba(255,255,255,.15);padding:7px 12px;border-radius:99px;white-space:nowrap}
+.chk{display:flex;align-items:center;gap:8px;margin:0 2px 8px;padding:8px 11px;border-radius:10px;font-size:13px;font-weight:700;color:var(--coral);background:var(--peach2);border:1px solid #FFDCCF;text-decoration:none;transition:.15s}
+.chk:hover{background:var(--peach);border-color:#FFC7B5}.chk svg{width:17px;height:17px;flex-shrink:0}.chk .ex{width:13px;height:13px;margin-left:auto;opacity:.7}
+.chk-m{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 6px;border-radius:14px;background:var(--peach2);font-size:12px;font-weight:700;color:var(--coral);text-align:center;text-decoration:none}.chk-m svg{width:22px;height:22px}
+.rrbtn{margin-top:6px;font-size:12.5px;font-weight:700;padding:7px 11px;border-radius:9px;background:var(--peach2);color:var(--coral);border:1px solid #FFD9CC}
+.delbtn{display:block;width:100%;margin:18px 0 4px;padding:11px;border-radius:12px;border:1px dashed #F3B3B5;background:#FFF5F5;color:#D64545;font-weight:700;font-size:13px;cursor:pointer}.delbtn:hover{background:#FFE9EA}
+.delwarn{background:#FFF5F5;border:1px solid #F7C9CB;border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.6;margin-bottom:12px}
+#dfoot .btn.danger{background:#E5484D;border-color:#E5484D;color:#fff}
+.ackbox{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;background:#FFF4E5;border:1px solid #FFD49A;color:#9A5B00;border-radius:12px;padding:10px 12px;margin-bottom:12px;font-size:13px;font-weight:600}.ackbox.ok{background:var(--green-bg);border-color:#BDE8D0;color:var(--green)}
+.abell{position:relative;min-width:44px}.abell b{position:absolute;top:-6px;right:-6px;background:#E5484D;color:#fff;font-size:10px;border-radius:9px;padding:1px 5px;min-width:16px;line-height:14px}
+.abell.hot{animation:ring 1.4s ease-in-out infinite;border-color:#FFC7B5}
+@keyframes ring{0%,60%,100%{transform:rotate(0)}10%,30%{transform:rotate(-12deg)}20%,40%{transform:rotate(12deg)}}
+#apop{position:fixed;right:18px;bottom:18px;z-index:120;width:min(420px,calc(100vw - 32px));max-height:min(70vh,560px);overflow:auto;background:#fff;border-radius:18px;box-shadow:0 18px 50px rgba(30,34,53,.28);border:1px solid var(--line);padding:14px;animation:popin .25s ease-out}
+@keyframes popin{from{transform:translateY(20px);opacity:0}to{transform:none;opacity:1}}
+#apop .ahead{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:15px;margin-bottom:8px}#apop .ahead2{font-weight:800;font-size:13px;color:#B45309;margin:12px 0 6px}
+#apop .ax{border:0;background:var(--peach2);border-radius:10px;width:30px;height:30px;cursor:pointer;font-size:14px}
+#apop .arow{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px;border-radius:12px;background:var(--peach2);margin-bottom:6px;border-left:4px solid var(--blue)}
+#apop .arow.lv1{border-left-color:var(--amber);background:#FFF6E8}#apop .arow.lv2{border-left-color:#E5484D;background:#FFF0F0}
+#apop .ai{min-width:0;font-size:13.5px}#apop .ai small{display:block;color:var(--muted);margin-top:2px;font-size:12px}#apop .ai a{color:var(--coral);font-weight:700;text-decoration:none}
+#apop .ab{display:flex;gap:6px;flex-shrink:0}#apop .anote{font-size:12px;color:var(--muted);margin:6px 2px}
+#apop .aperm{width:100%;margin-top:8px;padding:9px;border-radius:11px;border:1px solid #FFC7B5;background:#fff;color:var(--coral);font-weight:700;cursor:pointer}
+.teampick{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.teampick .ck{display:inline-flex;align-items:center;gap:5px;padding:6px 11px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:12.5px;font-weight:600;cursor:pointer;margin:0}
+.teampick .ck{padding:6px 12px!important;min-height:30px;line-height:1.3;box-sizing:border-box}.teampick .ck .bx{display:none}.teampick .ck.on{background:var(--peach);border-color:#FFB59E;color:var(--coral)}.teampick .ck.on:before{content:'✓'}
+.tmode{display:flex!important;flex-wrap:wrap;width:auto!important;max-width:100%}
+body:has(#drawer.on) #apop{right:auto;left:18px}
+@media (min-width:761px){body:has(#drawer.on) #apop{left:260px}}
+@media (max-width:760px){#apop{left:12px;right:12px;bottom:auto;top:calc(env(safe-area-inset-top) + 10px);width:auto}#apop .arow{flex-direction:column;align-items:stretch}#apop .ab{justify-content:flex-end}}
+.rrbar{font-size:13px;font-weight:800;padding:10px 14px;border-radius:11px;background:#fff;border:1px solid #FFC7B5;color:var(--coral);white-space:nowrap}
+.teamhd,.teamrow{display:grid;grid-template-columns:1fr 64px 64px 44px;gap:6px;align-items:center}
+.teamhd{font-size:10.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);padding:0 0 6px;border-bottom:1px solid var(--line)}.teamhd span:not(:first-child){text-align:center}
+.teamrow{padding:9px 0;border-bottom:1px dashed var(--line)}.teamrow .nm b{display:block;font-size:13.5px}.teamrow .nm small{font-size:11px;color:var(--muted)}
+.tg{display:flex;justify-content:center;cursor:pointer}.tg input{display:none}.tg i{width:38px;height:22px;border-radius:99px;background:#E6DCD7;position:relative;transition:.2s}
+.tg i::after{content:'';position:absolute;left:3px;top:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.tg input:checked+i{background:var(--green)}.tg input:checked+i::after{left:19px}
+.ord{display:flex;flex-direction:column;gap:2px}.ord button{font-size:10px;line-height:1;padding:3px;border-radius:5px;background:#F6F1EE;color:var(--muted)}
+@container app (max-width:760px){.flt:not(.open)>#fsale{display:none!important}.rrbar{flex:1 1 auto}}
 .rtk{border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:8px 0}.rtk-h{font-weight:800;font-size:13px;margin-bottom:8px}
 .rtk-g{display:grid;grid-template-columns:80px 1fr;gap:6px 10px;align-items:center;font-size:12.5px}.rtk-g label{color:var(--muted);font-weight:600}
 .rtk details{margin-top:8px;font-size:12.5px}.rtk summary{cursor:pointer;color:var(--coral);font-weight:700}
@@ -347,6 +378,7 @@ input.sel{font-weight:500}
         <span class="frange" id="frange" hidden><input type="date" class="sel" id="ffrom" title="Từ ngày"><b>→</b><input type="date" class="sel" id="fto" title="Đến ngày"></span>
         <select class="sel" id="ffield" title="Lọc theo cột ngày"></select>
         <select class="sel" id="fview" title="Chế độ xem (view) của Lark"></select>
+        <select class="sel" id="fsale" title="Xem số của 1 sale"></select>
       </div>
       <button class="refresh" id="reload" title="Đọc lại dữ liệu từ Lark Base">↻ Làm mới</button>
     </header>
@@ -530,7 +562,7 @@ const monthStart=(o=0)=>{const t=TODAY();return new Date(t.getFullYear(),t.getMo
 /* Bộ lọc thời gian — giống các điều kiện ngày của Lark (Hôm nay, Hôm qua, Tuần này, Tháng này, Tháng trước, Ngày cụ thể…) */
 const PERIODS=[['today','Hôm nay'],['yday','Hôm qua'],['week','Tuần này'],['lastweek','Tuần trước'],['nextweek','Tuần sau'],['month','Tháng này'],['lastmonth','Tháng trước'],['nextmonth','Tháng sau'],
   ['next7','7 ngày tới'],['last30','30 ngày qua'],['year','Năm nay'],['pickmonth','Chọn tháng…'],['custom','Từ ngày – đến ngày…'],['all','Tất cả thời gian']];
-const FLT={period:'month',from:null,to:null,month:null};
+const FLT={period:'month',from:null,to:null,month:null,sale:''};
 // trường ngày dùng để lọc cho từng bảng (giống chọn cột ngày trong bộ lọc Lark)
 const DFOPT={lead:[['d','Ngày liên hệ'],['ci','Ngày Check-in'],['co','Ngày Checkout']],
   order:[['close','Ngày chốt'],['start','Ngày khởi hành'],['end','Ngày kết thúc'],['created','Ngày tạo']],
@@ -839,8 +871,10 @@ $('#reload').onclick=()=>boot();
 const PAGEK={overview:'order',leads:'lead',sales:'order',care:'lead',orders:'order',payments:'pay',costs:'cost',customers:'cust',report:'order'};
 const KNAME={lead:'Quản lý lead',order:'Đơn hàng',pay:'Bảng thu tiền',cost:'Bảng chi phí',cust:'Khách hàng'};
 const PL=()=>perLabel().toUpperCase();
-const inPer=x=>inView(x)&&within(dateOf(x),range(FLT.period));
-const inPrev=x=>{const r=range(FLT.period,true);return !!r&&inView(x)&&within(dateOf(x),r)};
+const saleOf=x=>x._k==='cost'?(x.oid!=null?orders[x.oid]?.sale:''):x.sale;
+const saleOK=x=>!FLT.sale||x._k==='cust'||saleOf(x)===FLT.sale;
+const inPer=x=>inView(x)&&saleOK(x)&&within(dateOf(x),range(FLT.period));
+const inPrev=x=>{const r=range(FLT.period,true);return !!r&&inView(x)&&saleOK(x)&&within(dateOf(x),r)};
 const delta=(cur,prev)=>{if(!range(FLT.period,true))return '';if(!prev)return cur?'Kỳ trước: 0':'';const p=(cur-prev)/Math.abs(prev)*100;return (p>=0?'▲ +':'▼ ')+p.toFixed(1).replace('.',',')+'% so với kỳ trước'};
 $('#fper').innerHTML=PERIODS.map(p=>`<option value="${p[0]}">${p[1]}</option>`).join('');
 let syncFilters=function(){const k=PAGEK[page];$('#fper').value=FLT.period;
@@ -1166,7 +1200,7 @@ function inputHTML(k,m,val,key){const id=`f_${key}`,req=REQ[k].some(r=>r.split('
     case 5:return `<input type="date" class="sel fi" id="${id}" value="${esc(val)}"${req}>`;
     case 7:return `<label class="ck ${val?'on':''}" style="margin:0"><input type="checkbox" id="${id}" ${val?'checked':''} hidden><span class="bx">✓</span>Có</label>`;
     case 2:return `<input class="sel fi money-in" id="${id}" inputmode="numeric" value="${val===''?'':fmt(val)}" placeholder="0"${req}>`;
-    case 11:{const U=usersList();return `<select class="sel fi" id="${id}"${req}><option value="">—</option>${U.map(u=>`<option value="${esc(u.id)}" ${u.id===val?'selected':''}>${esc(u.name)}</option>`).join('')}</select>`}
+    case 11:{const U=usersList(val);return `<select class="sel fi" id="${id}"${req}><option value="">—</option>${U.map(u=>`<option value="${esc(u.id)}" ${u.id===val?'selected':''}>${esc(u.name)}</option>`).join('')}</select>`}
     case 18:case 21:{const tk=Object.keys(TID).find(x=>TID[x]===linkTable(m));
       if(tk==='order'){const o=orders.find(o=>o.rid===val);return `<input class="sel fi" id="${id}" list="dl_orders" value="${esc(o?o.code:'')}" placeholder="Gõ mã đơn…"${req}><datalist id="dl_orders">${orders.slice().sort((a,b)=>(b.close||0)-(a.close||0)).slice(0,800).map(o=>`<option value="${esc(o.code)}">${esc(o.cust)} · ${fmt(o.sell)}đ</option>`).join('')}</datalist>`}
       if(tk==='cust'){const u=customers.find(u=>u.rid===val);return `<input class="sel fi" id="${id}" list="dl_cust" value="${esc(u?u.name+' · '+u.phone:'')}" placeholder="Gõ tên / SĐT…"><datalist id="dl_cust">${customers.slice(0,3000).map(u=>`<option value="${esc(u.name+' · '+u.phone)}"></option>`).join('')}</datalist>`}
@@ -1294,6 +1328,99 @@ const ADDK={leads:'lead',orders:'order',payments:'pay',costs:'cost',customers:'c
   const q=new URLSearchParams(location.search).get('p');if(q&&TITLE[q])page=q;})();
 addEventListener('online',()=>{toast('Đã có mạng — đang cập nhật…');boot()});
 addEventListener('offline',()=>{toast('Mất mạng — đang xem dữ liệu đã lưu');stamp(' · đang ngoại tuyến')});
+
+/* ================= NHÂN SỰ ĐANG LÀM · CHIA LEAD THEO VÒNG · LỌC THEO SALE · MÃ ĐƠN ĐỒNG BỘ LARK ================= */
+const TEAM={people:[],loaded:false};
+const teamLS=v=>{try{if(v===undefined)return JSON.parse(localStorage.getItem('vivatrip-team')||'null');localStorage.setItem('vivatrip-team',JSON.stringify(v))}catch(e){return null}};
+async function loadTeam(){try{if(window.__API__){const d=await window.__API__('team',{fast:true});TEAM.people=d.people||[]}else TEAM.people=(teamLS()||{}).people||[]}catch(e){}TEAM.loaded=true}
+async function saveTeam(people){if(window.__API__)await window.__API__('team',{method:'POST',fast:true,body:JSON.stringify({people})});else teamLS({people});TEAM.people=people}
+const activeSet=()=>new Set(TEAM.people.filter(p=>p.active).map(p=>p.id));
+const canAssign=()=>!window.ME||ME.role==='admin'||((ME.perm.read||{}).lead==='all'&&(ME.perm.write||{}).lead&&!(ME.perm.write||{}).lead.own);
+
+/* 1) Danh sách người: chỉ hiện người đang làm (người cũ chỉ hiện khi đang gắn với dòng đó, kèm "đã nghỉ") */
+const _usersAll=usersList;
+usersList=function(keep){const U=_usersAll(),A=activeSet();if(!A.size)return U;
+  const out=U.filter(u=>A.has(u.id)).sort((a,b)=>{const pa=TEAM.people.find(p=>p.id===a.id),pb=TEAM.people.find(p=>p.id===b.id);return (pa?.ord||0)-(pb?.ord||0)||a.name.localeCompare(b.name,'vi')});
+  if(keep&&!A.has(keep)){const k=U.find(u=>u.id===keep);if(k)out.push({...k,name:k.name+' (đã nghỉ)'})}return out};
+const saleIdOf=l=>firstUserId(rawVal('lead',l.rid,'Sale chính'));
+
+/* 2) Chia lead theo vòng: ai đang ít lead nhất hôm nay được chia trước; bằng nhau thì theo thứ tự vòng, tiếp sau người vừa nhận */
+function rrPool(){return TEAM.people.filter(p=>p.active&&p.rr).sort((a,b)=>(a.ord||0)-(b.ord||0))}
+function todayTally(){const t=range('today'),c={},last={id:'',at:0};
+  for(const l of leads){if(!within(l.d,t))continue;const id=saleIdOf(l);if(!id)continue;c[id]=(c[id]||0)+1;const at=+l.d||0;if(at>=last.at){last.at=at;last.id=id}}return {c,last:last.id}}
+function nextSale(extra={},lastId){const pool=rrPool();if(!pool.length)return null;const {c,last}=todayTally(),L=lastId??last;
+  const n=p=>(c[p.id]||0)+(extra[p.id]||0),min=Math.min(...pool.map(n)),start=Math.max(pool.findIndex(p=>p.id===L),-1);
+  for(let i=1;i<=pool.length;i++){const p=pool[(start+i)%pool.length];if(n(p)===min)return p}return pool[0]}
+
+/* 3) Mã đơn theo đúng quy tắc của Lark: DH + ngày liên hệ (ddmmyy) + số thứ tự lead trong ngày */
+const dPrefix=d=>'DH'+String(d.getDate()).padStart(2,'0')+String(d.getMonth()+1).padStart(2,'0')+String(d.getFullYear()).slice(2);
+function codeForLead(l){const d=l.d||TODAY(),p=dPrefix(d),t=[day0(d),addD(day0(d),1)];
+  const same=leads.filter(x=>within(x.d,t)),rank=same.indexOf(l)+1||same.length+1;
+  const used=new Set([...leads.map(x=>norm(x.code)),...orders.map(o=>norm(o.code))].filter(Boolean));
+  let n=rank,c=p+n;while(used.has(norm(c))&&norm(c)!==norm(l.code)){n++;c=p+n}return c}
+newOrderCode=function(d=TODAY()){const p=dPrefix(d);let mx=0;
+  for(const c of [...leads.map(x=>x.code),...orders.map(o=>o.code)]){const m=String(c||'').toUpperCase().match(new RegExp('^'+p+'(\\d+)$'));if(m)mx=Math.max(mx,+m[1])}
+  return p+(mx+1)};
+// lead chưa có mã (Lark đang cấp) → đọc lại lead; vẫn chưa có thì tính theo quy tắc Lark
+const _ofl=orderFromLead;orderFromLead=async function(id){let l=leads[id];
+  if(!l.code||!/^DH\d+/i.test(l.code)){toast('Đang lấy mã đơn từ Lark…');await refreshIds('lead',[l.rid]);l=leads.find(x=>x.rid===l.rid)||l;id=l.id;
+    if(!l.code||!/^DH\d+/i.test(l.code))l.code=codeForLead(l)}
+  return _ofl(id)};
+// tạo lead mới trên web → Lark tự cấp mã sau vài giây → đọc lại để web hiện mã
+const _openForm=openForm;openForm=function(k,rid,opt={}){
+  const after=opt.after;if(k==='lead'&&!rid)opt={...opt,after:async(id,f)=>{for(const ms of [3e3,8e3,20e3])setTimeout(()=>refreshIds('lead',[id]),ms);if(after)await after(id,f)}};
+  if(k==='lead'&&!rid&&rrPool().length&&canAssign()&&!Object.keys(opt.pre||{}).some(n=>/sale chính/i.test(n))){const p=nextSale();if(p)opt={...opt,pre:{...(opt.pre||{}),'Sale chính':p.id},extraNote:(opt.extraNote?opt.extraNote+'<br>':'')+`🎲 Đã chia theo vòng cho <b>${esc(p.name)}</b> — đổi tay ở ô "Sale chính" nếu muốn.`}}
+  _openForm(k,rid,opt);
+  // nút chia vòng cạnh ô Sale chính
+  if(k==='lead'&&canAssign()&&rrPool().length){const f=[...$$('#lform .fld')].find(x=>/^sale chính/i.test(x.querySelector('span').textContent.trim()));const s=f?.querySelector('select');
+    if(s&&!s.disabled){const b=document.createElement('button');b.type='button';b.className='rrbtn';b.textContent='🎲 Chia vòng';b.onclick=()=>{const p=nextSale();if(p){s.value=p.id;toast('Chia vòng → '+p.name)}};s.parentElement.appendChild(b)}}};
+
+/* 4) Bảng chia lead: lead chưa có sale trong khoảng đang lọc → chia đều theo vòng, xem trước rồi mới ghi */
+function openAssign(){
+  const pool=rrPool(),un=leads.filter(l=>inPer(l)&&!saleIdOf(l)).sort((a,b)=>(a.d||0)-(b.d||0)),{c}=todayTally();
+  const extra={},plan=[];let last;for(const l of un){const p=nextSale(extra,last);if(!p)break;extra[p.id]=(extra[p.id]||0)+1;last=p.id;plan.push([l,p])}
+  drawer('🎲 Chia lead theo vòng',`${fmt(un.length)} lead chưa có sale · ${esc(perLabel())}`,
+   `${pool.length?'':`<div class="card" style="background:var(--amber-bg);border:0"><b>Chưa chọn người nhận lead</b><div class="note" style="font-style:normal">Bấm "Nhân sự & vòng chia" để tick các bạn đang làm và được chia lead.</div></div>`}
+    <div class="sec">Vòng chia hôm nay</div>
+    ${pool.map((p,i)=>`<div class="fld"><span>${i+1}. ${esc(p.name)}</span><b>${fmt(c[p.id]||0)} lead hôm nay${extra[p.id]?` <span class="pos">+${extra[p.id]}</span>`:''}</b></div>`).join('')}
+    <div class="sec">Sẽ chia (${fmt(plan.length)})</div>
+    ${plan.slice(0,60).map(([l,p])=>`<div class="tl"><span class="d">${dfmt(l.d)}</span><div class="t"><b>${esc(l.name)}</b><small>${esc(l.phone)} · ${esc(l.area)}</small></div><span class="tag t-new">${esc(p.name)}</span></div>`).join('')||'<div class="empty">Không có lead nào chưa có sale trong khoảng đang lọc</div>'}
+    ${plan.length>60?`<div class="note">… và ${fmt(plan.length-60)} lead khác</div>`:''}
+    <div class="note">Ai ít lead nhất hôm nay được chia trước, bằng nhau thì theo thứ tự vòng → không ai bị chia nhiều/ít. Muốn chia tay: mở lead và chọn "Sale chính".</div>`,
+   [['⚙ Nhân sự & vòng chia',openTeam],...(plan.length?[[`Chia ${fmt(plan.length)} lead`,async e=>{const b=e.currentTarget,m=fmeta('lead','Sale chính');if(!m)return toast('Không thấy cột "Sale chính"');b.disabled=true;let n=0;
+      for(const [l,p] of plan){b.textContent=`Đang chia ${++n}/${plan.length}…`;try{await larkWrite('lead',l.rid,{[m.id]:toCell(m,p.id)})}catch(err){toast('Lỗi: '+err.message);break}}
+      await refreshIds('lead',plan.map(([l])=>l.rid));closeAll();toast(`✓ Đã chia ${fmt(n)} lead`)}]]:[])])}
+
+/* 5) Nhân sự & vòng chia: tick ai đang làm (hiện trong ô chọn người), ai được chia lead, sắp thứ tự vòng */
+function openTeam(){const all=_usersAll(),has=new Map(TEAM.people.map(p=>[p.id,p])),{c}=todayTally();
+  const lastSeen={},lid=new Map(leads.map(l=>[l.rid,l.d])),oid=new Map(orders.map(o=>[o.rid,o.close]));
+  for(const k of ['lead','order'])for(const n of ['Sale chính','Điều hành']){const m=fmeta(k,n);if(!m)continue;for(const r of RAW[k].values()){const id=firstUserId(r.fields[m.id]);if(!id)continue;const x=(k==='lead'?lid:oid).get(r.recordId);if(x&&(!lastSeen[id]||x>lastSeen[id]))lastSeen[id]=x}}
+  const cut=addD(TODAY(),-60),recent=id=>!!(lastSeen[id]&&lastSeen[id]>=cut);
+  const rows=all.map(u=>({...u,...(has.get(u.id)||{active:TEAM.people.length?false:recent(u.id),rr:false,ord:999})})).sort((a,b)=>(b.active-a.active)||(a.ord-b.ord)||a.name.localeCompare(b.name,'vi'));
+  drawer('Nhân sự & vòng chia lead','Tick người đang làm · người được chia lead · kéo ▲▼ để xếp thứ tự vòng',
+   `<div class="teamhd"><span>Người</span><span>Đang làm</span><span>Chia lead</span><span></span></div><div id="teamlist">${rows.map(u=>`<div class="teamrow" data-id="${esc(u.id)}" data-name="${esc(u.name)}">
+      <div class="nm"><b>${esc(u.name)}</b><small>${lastSeen[u.id]?'gần nhất '+dfull(lastSeen[u.id]):'chưa có dữ liệu'}${c[u.id]?` · ${c[u.id]} lead hôm nay`:''}</small></div>
+      <label class="tg"><input type="checkbox" class="t_a" ${u.active?'checked':''}><i></i></label><label class="tg"><input type="checkbox" class="t_r" ${u.rr?'checked':''}><i></i></label>
+      <span class="ord"><button type="button" data-up>▲</button><button type="button" data-dn>▼</button></span></div>`).join('')}</div>
+    <div class="note">Bỏ tick "Đang làm" → người đó không còn hiện trong ô chọn Sale chính / Điều hành (dữ liệu cũ vẫn giữ nguyên). Lần đầu app tự tick người có dữ liệu trong 60 ngày qua — bấm "Gợi ý" để tick lại theo cách này.</div>`,
+   [['Gợi ý',()=>{$$('#teamlist .teamrow').forEach(r=>{r.querySelector('.t_a').checked=recent(r.dataset.id)})}],['Huỷ',closeAll],['Lưu',async e=>{const b=e.currentTarget;b.disabled=true;
+     const people=[...$$('#teamlist .teamrow')].map((r,i)=>({id:r.dataset.id,name:r.dataset.name,active:r.querySelector('.t_a').checked,rr:r.querySelector('.t_r').checked&&r.querySelector('.t_a').checked,ord:i}));
+     try{await saveTeam(people);closeAll();toast(`✓ ${people.filter(p=>p.active).length} người đang làm · ${people.filter(p=>p.rr).length} người nhận lead`);fillSaleFilter();render()}catch(err){b.disabled=false;toast(err.message)}}]]);
+  $$('#teamlist [data-up],#teamlist [data-dn]').forEach(bt=>bt.onclick=()=>{const r=bt.closest('.teamrow');if(bt.hasAttribute('data-up'))r.previousElementSibling?.before(r);else r.nextElementSibling?.after(r)});
+  $$('#teamlist .t_r').forEach(x=>x.onchange=()=>{if(x.checked)x.closest('.teamrow').querySelector('.t_a').checked=true})}
+
+/* 6) Lọc theo 1 sale trên mọi trang (cho quản lý so sánh) */
+function fillSaleFilter(){const s=$('#fsale');if(!s)return;const own=window.ME&&((ME.perm.read||{}).lead==='own'||(ME.perm.read||{}).order==='own');
+  s.hidden=!!own;if(own)return;const names=[...new Set([...TEAM.people.filter(p=>p.active).map(p=>person({name:p.name})),...SALES])].filter(Boolean);
+  s.innerHTML=`<option value="">Mọi sale</option>`+names.map(n=>`<option ${FLT.sale===n?'selected':''}>${esc(n)}</option>`).join('')}
+$('#fsale').onchange=e=>{FLT.sale=e.target.value;syncFilters();render();toast(FLT.sale?'Chỉ xem số của '+FLT.sale:'Xem mọi sale')};
+const _sf=syncFilters;syncFilters=function(){_sf();const n=$('#fnote');if(n&&FLT.sale)n.insertAdjacentHTML('beforeend',` · sale: <b>${esc(FLT.sale)}</b> <a id="sclear">bỏ</a>`);const c=$('#sclear');if(c)c.onclick=()=>{FLT.sale='';$('#fsale').value='';syncFilters();render()}};
+const _initF=initFilters;initFilters=function(){_initF();fillSaleFilter();const b=$('#rrbtn');if(b)b.hidden=!canAssign();
+  if(!TEAM.loaded&&!TEAM.loading){TEAM.loading=1;loadTeam().then(()=>{fillSaleFilter();if(LOADED_AT)render()})}};
+
+/* nút trên trang Lead */
+(function(){const tb=$('#leads .toolbar');if(!tb)return;const b=document.createElement('button');b.className='rrbar';b.id='rrbtn';b.textContent='🎲 Chia lead';b.onclick=()=>{if(!LOADED_AT)return toast('Đang tải dữ liệu…');openAssign()};tb.appendChild(b)})();
+const _ar=window.__APPLYROLE__;window.__APPLYROLE__=function(){_ar&&_ar();const b=$('#rrbtn');if(b)b.hidden=!canAssign()};
 
 /* ================= PHÂN QUYỀN TRÊN GIAO DIỆN + TRANG TÀI KHOẢN =================
    Máy chủ (Worker) mới là nơi chặn thật; phần này chỉ ẩn/khoá cho gọn mắt.
@@ -1423,12 +1550,158 @@ function roleForm(r){const isNew=!r,locked=r?.id==='admin';r=r||{label:'',read:{
       b.disabled=true;try{const x=await window.__API__('roles',{method:'POST',fast:true,body:JSON.stringify(body)});ACCTS.roles=x.roles;ACCTAB='roles';closeAll();renderAccounts();toast('✓ Đã lưu vai trò '+body.label)}catch(err){b.disabled=false;toast(err.message)}}]]);
   $$('#lform label.ck').forEach(l=>l.onclick=ev=>{ev.preventDefault();const c=l.querySelector('input');if(c.disabled)return;c.checked=!c.checked;l.classList.toggle('on',c.checked)})}
 
-/* ---- Check sản phẩm toàn quốc: mở thẳng trang vivatripcheck ---- */
+/* ---- Check sản phẩm toàn quốc: nút nhỏ gọn, mở thẳng trang vivatripcheck ---- */
 const CHECK_URL='https://vivatripcheck.vercel.app/';
-(function(){IC.check=sv('<path d="M14 3h7v7"/><path d="M21 3 11 13"/><path d="M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"/>');
-  const html=cls=>`<a class="${cls}" data-ext="check" href="${CHECK_URL}" target="_blank" rel="noopener">${IC.check}<span>Check sản phẩm toàn quốc</span></a>`;
-  $('#snav').insertAdjacentHTML('afterbegin',html('extlink'));$('#mgrid').insertAdjacentHTML('afterbegin',html('extlink m'));
-  $('#overview .hero')?.insertAdjacentHTML('afterend',`<a class="checkbanner" data-ext="check" href="${CHECK_URL}" target="_blank" rel="noopener"><span class="ic">🔎</span><span><b>Check sản phẩm toàn quốc</b><small>Tra nhanh villa, khách sạn, giá và lịch trống</small></span><span class="go">Mở ↗</span></a>`)})();
+(function(){IC.check=sv('<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/><path d="m8.5 11 1.8 1.8 3.4-3.6"/>');
+  const ext='<svg class="ex" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>';
+  $('#snav').insertAdjacentHTML('afterbegin',`<a class="chk" data-ext="check" href="${CHECK_URL}" target="_blank" rel="noopener">${IC.check}<span>Check Sản Phẩm</span>${ext}</a>`);
+  $('#mgrid').insertAdjacentHTML('beforeend',`<a class="chk-m" data-ext="check" href="${CHECK_URL}" target="_blank" rel="noopener">${IC.check}Check Sản Phẩm</a>`)})();
+
+/* ================= XOÁ CÓ LƯU VẾT · BÁO KHÁCH MỚI CHO SALE · NHẮC "CHƯA NHẬN KHÁCH" · NHÓM CỦA QUẢN LÝ SALE ================= */
+const canDel=k=>!window.ME||(P_().del||[]).includes(k);
+const DELN={lead:'lead',order:'đơn hàng',pay:'phiếu thu',cost:'phiếu chi',cust:'khách hàng'};
+// dòng vừa xoá trên máy này: không để bản dữ liệu cũ của máy chủ làm "sống lại" trong ~3 phút
+const GONE={};
+const _mergeSnap0=mergeSnap;mergeSnap=function(k,recs){const g=GONE[k]||{},now=Date.now();for(const id in g)if(now-g[id]>180e3)delete g[id];
+  _mergeSnap0(k,Object.keys(g).length?recs.filter(r=>!g[r.recordId]):recs)};
+
+function askDelete(k,rid,label,warn=''){
+  drawer('🗑 Xoá '+DELN[k],esc(label),`<div class="delwarn"><b>Xoá "${esc(label)}" khỏi Lark Base?</b><br>
+    ${window.__API__?'Bản ghi được lưu đầy đủ vào <b>Lịch sử xoá</b> (ai xoá, lúc nào, lý do) — Quản lý khôi phục được bất cứ lúc nào.':'Lark lưu lại lịch sử thao tác của bảng.'}${warn?`<br><span class="neg">${warn}</span>`:''}</div>
+    <form id="lform" onsubmit="return false" autocomplete="off"><div class="fld"><span>Lý do xoá *</span><div><input class="sel fi" id="del_r" placeholder="vd: nhập nhầm, trùng đơn, khách huỷ…" maxlength="200"></div></div></form>`,
+    [['Huỷ',closeAll],['🗑 Xoá',async e=>{const b=e.currentTarget,why=$('#del_r').value.trim();if(!why){toast('Nhập lý do xoá');$('#del_r').focus();return}
+      b.disabled=true;b.textContent='Đang xoá…';
+      try{const t=META[k].t||await openTable(k);await t.deleteRecord(rid,why);
+        (GONE[k]=GONE[k]||{})[rid]=Date.now();RAW[k].delete(rid);closeAll();rebuild('đã xoá 1 '+DELN[k]);toast('✓ Đã xoá '+label+' · Lark đã cập nhật')}
+      catch(err){b.disabled=false;b.textContent='🗑 Xoá';toast('Không xoá được: '+(err?.message||err))}}]]);
+  $('#dfoot .btn:last-child').classList.add('danger');setTimeout(()=>$('#del_r')?.focus(),50)}
+const delBtn=(k,rid,label,warn)=>{if(!canDel(k))return;const b=document.createElement('button');b.className='delbtn';b.textContent='🗑 Xoá '+DELN[k]+' này';
+  b.onclick=()=>askDelete(k,rid,label,warn);$('#dbody').appendChild(b)};
+{const o0=openOrder;openOrder=function(id){o0(id);const o=orders[id];if(!o)return;const np=payments.filter(p=>p.oid===id).length,nc=costs.filter(c=>c.oid===id).length;
+  delBtn('order',o.rid,o.code+' · '+o.cust,np||nc?`Đơn này đang có ${np} phiếu thu, ${nc} phiếu chi — các phiếu vẫn giữ nguyên nhưng mất liên kết với đơn.`:'')}}
+{const l0=openLead;openLead=function(id){l0(id);const l=leads[id];if(!l)return;ackUI(l);delBtn('lead',l.rid,l.name+(l.phone?' · '+l.phone:''))}}
+{const p0=openPayment;openPayment=function(id){p0(id);const p=payments[id];if(p)delBtn('pay',p.rid,p.code+' · '+vnd(p.amount))}}
+{const c0=openCost;openCost=function(id){c0(id);const c=costs[id];if(c)delBtn('cost',c.rid,c.name+' · '+vnd(c.amount||0))}}
+{const u0=openCustomer;openCustomer=function(id){u0(id);const u=customers[id];if(u)delBtn('cust',u.rid,u.name)}}
+
+/* ---- Lịch sử xoá (trang Tài khoản → tab mới, chỉ Quản lý) ---- */
+let AUDIT=null;
+async function renderAudit(el){
+  if(!AUDIT){el.innerHTML='<div class="card"><div class="empty">Đang tải lịch sử…</div></div>';try{AUDIT=(await window.__API__('audit',{fast:true})).items||[]}catch(e){el.innerHTML=`<div class="card"><div class="empty">${esc(e.message)}</div></div>`;return}}
+  const t=x=>new Date(x).toLocaleString('vi-VN',{hour:'2-digit',minute:'2-digit',day:'2-digit',month:'2-digit',year:'numeric'});
+  el.innerHTML=`<div class="note" style="margin:0 0 10px">Mọi lần xoá trên web đều được lưu ở đây (1.000 lần gần nhất). Bấm <b>Khôi phục</b> để tạo lại bản ghi trên Lark với đầy đủ dữ liệu cũ.</div>
+   <div class="card"><div class="tblwrap"><table class="tbl"><thead><tr><th>Lúc</th><th>Người xoá</th><th>Bảng</th><th>Bản ghi</th><th>Lý do</th><th></th></tr></thead><tbody>
+   ${AUDIT.map((a,i)=>`<tr><td>${t(a.at)}</td><td><b>${esc(a.byName||a.by)}</b></td><td>${esc(TK_NAMES[a.table]||a.table)}</td><td>${esc(a.label||a.rid)}</td><td>${esc(a.reason||'—')}</td>
+     <td>${a.restored?`<span class="pos">✓ đã khôi phục ${t(a.restored.at)}</span>`:`<button class="abtn" data-rs="${i}">↩ Khôi phục</button>`}</td></tr>`).join('')||'<tr><td colspan="6" class="empty">Chưa có lần xoá nào</td></tr>'}</tbody></table></div>
+   <div class="cards">${AUDIT.map((a,i)=>`<div class="lcard"><div class="r1"><b>${esc(a.label||a.rid)}</b><span class="tag t-gray">${esc(TK_NAMES[a.table]||a.table)}</span></div><div class="r2">${t(a.at)} · ${esc(a.byName||a.by)} · ${esc(a.reason||'không ghi lý do')}</div>
+     <div style="margin-top:6px">${a.restored?'<span class="pos">✓ đã khôi phục</span>':`<button class="abtn" data-rs="${i}">↩ Khôi phục</button>`}</div></div>`).join('')||'<div class="empty">Chưa có lần xoá nào</div>'}</div></div>`;
+  $$('#accounts [data-rs]').forEach(b=>b.onclick=async()=>{const a=AUDIT[+b.dataset.rs];if(!confirm('Khôi phục "'+(a.label||a.rid)+'" vào Lark?'))return;b.disabled=true;b.textContent='Đang khôi phục…';
+    try{const r=await window.__API__('restore',{method:'POST',fast:true,body:JSON.stringify({id:a.id})});a.restored={at:Date.now(),rid:r.rid};
+      if(r.rid){delete (GONE[a.table]||{})[a.rid];await refreshIds(a.table,[r.rid])}toast('✓ Đã khôi phục '+(a.label||''));renderAudit(el)}catch(e){b.disabled=false;b.textContent='↩ Khôi phục';toast(e.message)}})}
+function addAuditTab(){const seg=$('#accounts .acctab');if(!seg||seg.querySelector('[data-t=audit]'))return;
+  seg.insertAdjacentHTML('beforeend',`<button data-t="audit" class="${ACCTAB==='audit'?'on':''}">🗑 Lịch sử xoá</button>`);
+  seg.querySelector('[data-t=audit]').onclick=()=>{ACCTAB='audit';AUDIT=null;renderAccounts()}}
+// tab "Lịch sử xoá": vẽ khung chung rồi thay phần thân
+{const ra1=renderAccounts;renderAccounts=async function(){
+  if(ACCTAB!=='audit'){await ra1();addAuditTab();return}
+  ACCTAB='users';await ra1();ACCTAB='audit';addAuditTab();
+  $$('#accounts .acctab button').forEach(b=>{b.classList.toggle('on',b.dataset.t==='audit');if(b.dataset.t!=='audit')b.onclick=()=>{ACCTAB=b.dataset.t;renderAccounts()}});
+  const seg=$('#accounts .acctab');while(seg.nextSibling)seg.nextSibling.remove();const box=document.createElement('div');seg.after(box);renderAudit(box)}}
+
+/* ---- Quản lý sale theo nhóm: chỉ thấy / chia cho nhân sự mình quản lý ---- */
+const myTeam=()=>window.ME&&Array.isArray(ME.team)&&ME.team.length?new Set([...ME.team,ME.larkId].filter(Boolean)):null;
+{const u0=usersList;usersList=function(keep){const T=myTeam(),U=u0(keep);return T?U.filter(u=>T.has(u.id)||u.id===keep):U}}
+{const r0=rrPool;rrPool=function(){const T=myTeam(),P=r0();return T?P.filter(p=>T.has(p.id)):P}}
+// form tài khoản: thêm mục "Quản lý nhóm"
+{const a0=accForm;accForm=function(u){a0(u);const U=_usersAll().filter(x=>activeSet().size?activeSet().has(x.id)||(u?.team||[]).includes(x.id):true),T=new Set(u?.team||[]);
+  const f=document.createElement('div');f.className='fld';f.innerHTML=`<span>Quản lý nhóm</span><div>
+    <div class="seg tmode" style="width:max-content"><button type="button" data-m="all" class="${T.size?'':'on'}">Tất cả mọi người</button><button type="button" data-m="pick" class="${T.size?'on':''}">Chỉ nhân sự được chọn</button></div>
+    <div id="a_team" class="teampick" ${T.size?'':'hidden'}>${U.map(x=>`<label class="ck mini ${T.has(x.id)?'on':''}"><input type="checkbox" value="${esc(x.id)}" ${T.has(x.id)?'checked':''} hidden><span class="bx">✓</span>${esc(x.name)}</label>`).join('')}</div>
+    <div class="note" style="font-style:normal;line-height:1.5">Dành cho <b>Quản lý sale</b>: chọn nhân sự → người này chỉ thấy lead, đơn, phiếu thu/chi của những nhân sự đó (và của chính mình), chỉ chia khách trong nhóm — tiện tính lương theo nhóm. "Tất cả" = theo quyền của vai trò.</div></div>`;
+  $('#lform').insertBefore(f,$('#a_p').closest('.fld'));
+  const sync=m=>{$$('#lform .tmode button').forEach(b=>b.classList.toggle('on',b.dataset.m===m));$('#a_team').hidden=m!=='pick'};
+  $$('#lform .tmode button').forEach(b=>b.onclick=()=>sync(b.dataset.m));
+  $$('#a_team label.ck').forEach(l=>l.onclick=ev=>{ev.preventDefault();const c=l.querySelector('input');c.checked=!c.checked;l.classList.toggle('on',c.checked)});
+  // gửi kèm danh sách nhóm khi Lưu
+  const save=$('#dfoot .btn:last-child'),fn=save.onclick;save.onclick=e=>{const pick=$('#lform .tmode .on')?.dataset.m==='pick',team=pick?$$('#a_team input:checked').map(c=>c.value):[];
+    if(pick&&!team.length){toast('Chọn ít nhất 1 nhân sự, hoặc chọn "Tất cả mọi người"');return}
+    const api=window.__API__;window.__API__=(path,opt)=>{if(path==='users'&&opt?.body){const b=JSON.parse(opt.body);b.team=team;opt={...opt,body:JSON.stringify(b)}}window.__API__=api;return api(path,opt)};
+    return fn(e)}}}
+// danh sách tài khoản: hiện nhóm đang quản lý
+{const d0=roleDesc;roleDesc=function(r){let s=d0(r);if(r.id!=='admin'&&(r.del||[]).length)s+=' · được xoá: '+r.del.map(k=>TK_NAMES[k]).join(', ');return s}}
+
+/* ---- trình chỉnh vai trò: thêm quyền "Xoá" từng bảng ---- */
+{const f0=roleForm;roleForm=function(r){f0(r);const locked=r?.id==='admin',D=new Set(locked?['lead','order','pay','cost','cust']:(r?.del||[]));
+  $$('#lform .rtk').forEach(x=>{const tk=x.dataset.tk,g=x.querySelector('.rtk-g');g.insertAdjacentHTML('beforeend',`<label>Xoá</label><div><label class="ck mini ${D.has(tk)?'on':''}"><input type="checkbox" id="x_${tk}" ${D.has(tk)?'checked':''} ${locked?'disabled':''} hidden><span class="bx">✓</span>Được xoá <small class="muted">(lưu vết)</small></label></div>`);
+    const l=g.lastElementChild.querySelector('label.ck');l.onclick=ev=>{ev.preventDefault();const c=l.querySelector('input');if(c.disabled)return;c.checked=!c.checked;l.classList.toggle('on',c.checked)}});
+  if(locked)return;const save=$('#dfoot .btn:last-child'),fn=save.onclick;
+  save.onclick=e=>{const del=['lead','order','pay','cost','cust'].filter(tk=>$('#x_'+tk)?.checked&&$('#r_'+tk).value!=='none');
+    const api=window.__API__;window.__API__=(path,opt)=>{if(path==='roles'&&opt?.method==='POST'){const b=JSON.parse(opt.body);b.del=del;opt={...opt,body:JSON.stringify(b)}}window.__API__=api;return api(path,opt)};return fn(e)}}}
+
+/* ================= BÁO KHÁCH MỚI + NHẮC CHƯA NHẬN =================
+   Sale: có lead mới gán cho mình → bật bảng thông báo + chuông + thông báo hệ thống; tích "✓ Đã nhận khách" (ghi cột SALE XÁC NHẬN LEAD).
+   Chưa tích: sau 5 phút, 10 phút… cứ mỗi 5 phút cảnh báo lại cho sale + Tổng đài / Quản lý sale / Quản lý đến khi tích. */
+const ACK_F='SALE XÁC NHẬN LEAD',ACK_STEP=5*60e3,ACK_WIN=24*3600e3;
+const ackOn=()=>!!fmeta('lead',ACK_F);
+const ackOf=l=>chk(rawVal('lead',l.rid,ACK_F));
+const bornOf=l=>{const r=RAW.lead?.get(l.rid);return r?.ct?new Date(r.ct):l.d};
+const myLark=()=>window.ME?.larkId||window.__ASLARK__||'';
+const isMine=l=>!!myLark()&&saleIdOf(l)===myLark();
+const watcher=()=>window.__ASLARK__?false:!window.ME||ME.role==='admin'||(((P_().read||{}).lead==='all'||myTeam())&&canAssign());
+function pendingLeads(){if(!ackOn()||!leads)return[];const now=Date.now();
+  return leads.filter(l=>{const b=bornOf(l);return b&&now-b<ACK_WIN&&now-b>-6e4&&saleIdOf(l)&&!ackOf(l)&&l.st!=='Khách Thất bại'&&!ACKED[l.rid]})}
+const ACKED={};
+const ALS=(v)=>{const key='vivatrip-alert-'+(window.ME?.u||'plugin');try{if(v===undefined)return JSON.parse(localStorage.getItem(key)||'{}');localStorage.setItem(key,JSON.stringify(v))}catch(e){return {}}};
+let ASTATE=ALS(),AFIRST=true,APOP_MUTE=0;
+const agoT=ms=>{const m=Math.floor(ms/60e3);return m<1?'vừa xong':m<60?m+' phút':Math.floor(m/60)+' giờ '+(m%60)+' phút'};
+function beep(){try{const A=window.__AC__||(window.__AC__=new (window.AudioContext||window.webkitAudioContext)());[0,.18,.36].forEach((t,i)=>{const o=A.createOscillator(),g=A.createGain();o.frequency.value=[880,1175,1568][i];o.connect(g);g.connect(A.destination);
+  g.gain.setValueAtTime(.0001,A.currentTime+t);g.gain.exponentialRampToValueAtTime(.25,A.currentTime+t+.02);g.gain.exponentialRampToValueAtTime(.0001,A.currentTime+t+.16);o.start(A.currentTime+t);o.stop(A.currentTime+t+.17)})}catch(e){}
+  try{navigator.vibrate&&navigator.vibrate([200,100,200])}catch(e){}}
+async function sysNotify(title,body){try{if(!('Notification' in window)||Notification.permission!=='granted')return;
+  const r=navigator.serviceWorker&&await navigator.serviceWorker.getRegistration();const o={body,icon:'icon-192.png',badge:'icon-192.png',tag:'vivatrip-lead',renotify:true};
+  if(r&&r.showNotification)r.showNotification(title,o);else new Notification(title,o)}catch(e){}}
+async function ackLead(rid){const m=fmeta('lead',ACK_F);if(!m)return;ACKED[rid]=Date.now();drawAlerts();
+  try{await larkWrite('lead',rid,{[m.id]:true});await refreshIds('lead',[rid]);toast('✓ Đã nhận khách — đã báo Tổng đài & Quản lý')}catch(e){delete ACKED[rid];drawAlerts();toast('Không lưu được: '+(e?.message||e))}}
+function ackUI(l){if(!ackOn())return;const a=ackOf(l)||ACKED[l.rid],b=bornOf(l);
+  const box=document.createElement('div');box.className='ackbox '+(a?'ok':'');
+  box.innerHTML=a?'✓ Sale đã xác nhận nhận khách':`<span>⏳ Sale chưa xác nhận nhận khách${b?' · '+agoT(Date.now()-b):''}</span>${isMine(l)||(!window.ME&&!window.__ASLARK__)?'<button class="abtn p" data-ack>✓ Đã nhận khách</button>':''}`;
+  $('#dbody').prepend(box);box.querySelector('[data-ack]')?.addEventListener('click',async()=>{await ackLead(l.rid);const n=leads.find(x=>x.rid===l.rid);if(n)openLead(n.id)})}
+
+function checkAlerts(){
+  if(!LOADED_AT||!leads)return;const P=pendingLeads(),now=Date.now();let ring=false,newMine=[];
+  const mine=P.filter(isMine),late=watcher()?P.filter(l=>now-bornOf(l)>=ACK_STEP):[];
+  for(const l of mine){const s=ASTATE[l.rid];if(!s){ASTATE[l.rid]={st:0,at:now};if(!AFIRST||now-bornOf(l)<10*60e3){ring=true;newMine.push(l)}}}
+  for(const l of [...mine,...late]){const st=Math.floor((now-bornOf(l))/ACK_STEP),s=ASTATE[l.rid]||(ASTATE[l.rid]={st:0,at:now});if(st>s.st){s.st=st;s.at=now;if(st>=1)ring=true}}
+  for(const id in ASTATE)if(!P.some(l=>l.rid===id)&&now-(ASTATE[id].at||0)>ACK_WIN)delete ASTATE[id];
+  ALS(ASTATE);AFIRST=false;
+  if(ring&&!document.hidden||ring&&mine.length){APOP_MUTE=0;beep();
+    if(newMine.length)sysNotify(`🔔 ${newMine.length} khách mới cho bạn`,newMine.map(l=>`${l.name}${l.phone?' · '+l.phone:''}${l.area&&l.area!=='Chưa chọn'?' · '+l.area:''}`).join('\n'));
+    else if(late.length)sysNotify(`⚠ ${late.length} khách chưa được sale nhận`,late.slice(0,4).map(l=>`${l.name} · ${l.sale} · ${agoT(now-bornOf(l))}`).join('\n'));
+    else if(mine.length)sysNotify(`⏰ Bạn còn ${mine.length} khách chưa xác nhận`,'Mở app và bấm "✓ Đã nhận khách"')}
+  drawAlerts(ring)}
+function drawAlerts(open){
+  const P=pendingLeads(),now=Date.now(),mine=P.filter(isMine),late=watcher()?P.filter(l=>now-bornOf(l)>=ACK_STEP&&!isMine(l)):[],n=mine.length+late.length;
+  let bell=$('#abell');if(!bell){bell=document.createElement('button');bell.id='abell';bell.className='refresh abell';bell.title='Khách mới / chưa nhận';$('#reload').before(bell);
+    bell.onclick=()=>{askPerm();APOP_MUTE=0;drawAlerts(true)}}
+  bell.innerHTML=`🔔${n?`<b>${n}</b>`:''}`;bell.classList.toggle('hot',n>0);bell.hidden=!ackOn()||(!n&&!(myLark()||watcher()));
+  let pop=$('#apop');if(!n){pop?.remove();return}if(!open&&!pop)return;if(APOP_MUTE&&!open)return;
+  if(!pop){pop=document.createElement('div');pop.id='apop';document.body.appendChild(pop)}
+  const row=(l,me)=>{const age=now-bornOf(l),lv=Math.floor(age/ACK_STEP);return `<div class="arow ${lv>=2?'lv2':lv>=1?'lv1':''}"><div class="ai"><b>${esc(l.name)}</b>${l.phone?` · <a href="tel:${esc(l.phone.replace(/[^\d+]/g,''))}">${esc(l.phone)}</a>`:''}
+    <small>${me?'':'Sale <b>'+esc(l.sale)+'</b> · '}${l.area&&l.area!=='Chưa chọn'?esc(l.area)+' · ':''}${esc(l.src)} · ${age<60e3?'vừa vào':'chờ '+agoT(age)}${lv>=1?' ⚠':''}</small></div>
+    <div class="ab">${me?`<button class="abtn p" data-ack="${l.rid}">✓ Đã nhận khách</button>`:''}<button class="abtn" data-view="${l.rid}">Xem</button></div></div>`};
+  pop.innerHTML=`<div class="ahead"><b>${mine.length?`🔔 Bạn có ${mine.length} khách mới chưa xác nhận`:`⚠ ${late.length} khách chưa được sale nhận`}</b><button class="ax" title="Để sau">✕</button></div>
+    ${mine.length?`<div class="alist">${mine.map(l=>row(l,true)).join('')}</div><div class="anote">Bấm <b>✓ Đã nhận khách</b> khi đã nhận thông tin. Chưa bấm → cứ 5 phút nhắc lại và báo Tổng đài / Quản lý.</div>`:''}
+    ${late.length?`${mine.length?`<div class="ahead2">⚠ ${late.length} khách sale khác chưa nhận</div>`:''}<div class="alist">${late.map(l=>row(l,false)).join('')}</div>`:''}
+    ${'Notification' in window&&Notification.permission==='default'?'<button class="aperm">🔔 Bật thông báo trên máy này</button>':''}`;
+  pop.querySelector('.ax').onclick=()=>{APOP_MUTE=1;pop.remove()};
+  pop.querySelector('.aperm')?.addEventListener('click',()=>askPerm(true));
+  pop.querySelectorAll('[data-ack]').forEach(b=>b.onclick=()=>ackLead(b.dataset.ack));
+  pop.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{const l=leads.find(x=>x.rid===b.dataset.view);if(l){APOP_MUTE=1;pop.remove();openLead(l.id)}})}
+function askPerm(force){try{if('Notification' in window&&Notification.permission==='default')Notification.requestPermission().then(()=>drawAlerts(true));if(force)beep()}catch(e){}}
+{const rb0=rebuild;rebuild=function(r){rb0(r);try{checkAlerts()}catch(e){console.error(e)}}}
+setInterval(()=>{try{checkAlerts()}catch(e){}},30e3);
+// sale đang mở app: hỏi máy chủ nhanh hơn để khách mới hiện sớm
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)setTimeout(()=>{try{checkAlerts()}catch(e){}},1500)});
 
 </script>
 </body>
