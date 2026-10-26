@@ -1,0 +1,8 @@
+name = "ai-replay"
+main = "index.js"
+compatibility_date = "2025-06-01"
+workers_dev = true
+
+# Ép worker chạy gần máy chủ Anthropic (Mỹ) thay vì Hồng Kông
+[placement]
+region = "aws:us-east-1"
